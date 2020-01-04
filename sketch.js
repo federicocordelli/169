@@ -62,7 +62,7 @@ function setup() {
 
 //new title
    textSize(100);
-   textStyle(BOLD);
+   // textStyle(BOLD);
    text("FEDERICO CORDELLI",10,100);
    text("PHOTO PORTFOLIO",10,200);
    text("THE BEST OF/16:9",10,300);
@@ -130,7 +130,7 @@ function mouseClicked() {
 
 //try
     textSize(100);
-    textStyle(BOLD);
+    // textStyle(BOLD);
     text("FEDERICO CORDELLI",10,100);
     text("PHOTO PORTFOLIO",10,200);
     text("THE BEST OF/16:9",10,300);

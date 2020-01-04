@@ -62,7 +62,7 @@ function setup() {
 
 //new title
    textSize(100);
-   // textStyle(BOLD);
+   textStyle(BOLD);
    text("FEDERICO CORDELLI",10,100);
    text("PHOTO PORTFOLIO",10,200);
    text("THE BEST OF/16:9",10,300);
@@ -130,7 +130,7 @@ function mouseClicked() {
 
 //try
     textSize(100);
-    // textStyle(BOLD);
+    textStyle(BOLD);
     text("FEDERICO CORDELLI",10,100);
     text("PHOTO PORTFOLIO",10,200);
     text("THE BEST OF/16:9",10,300);
@@ -154,3 +154,28 @@ function mousePressed(){
 }
 }
 */
+// codice telefono 
+function touchStarted() {
+  if(j===20) {
+    j=1;
+  } else if(j<20) {
+  j++;
+    }
+    textSize(20);
+    textStyle(NORMAL);
+    text(j-1,(width-10)-20*j,height-35);
+
+//try
+    textSize(100);
+    textStyle(BOLD);
+    text("FEDERICO CORDELLI",10,100);
+    text("PHOTO PORTFOLIO",10,200);
+    text("THE BEST OF/16:9",10,300);
+    strokeWeight(8);
+    line(0,320,windowWidth,320);
+}
+
+function touchMoved() {
+  imageMode(CENTER);
+   image(imagesOk[j], mouseX, mouseY, 256, 148);
+}

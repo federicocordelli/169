@@ -163,7 +163,7 @@ function mousePressed(){
 }
 */
 // codice telefono
-function touchStarted() {
+function touchEnded() {
   if(j===20) {
     j=1;
   } else if(j<20) {

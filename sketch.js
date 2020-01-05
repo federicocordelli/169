@@ -37,6 +37,8 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
   background("#f0ffff");
 
+  frameRate(15);
+
 
   strokeWeight(0);
   textFont("Barlow");
@@ -184,7 +186,7 @@ function touchEnded() {
 }
 
 function touchMoved() {
-  frameRate(15);
+  // frameRate(15);
   imageMode(CENTER);
    image(imagesOk[j], mouseX, mouseY, 256, 148);
 }

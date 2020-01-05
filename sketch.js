@@ -118,6 +118,8 @@ function mouseDragged() {
 
 }
 */
+// MOUSE CLICKED
+/*
 function mouseClicked() {
   if(j===20) {
     j=1;
@@ -137,15 +139,21 @@ function mouseClicked() {
     strokeWeight(8);
     line(0,320,windowWidth,320);
 }
+*/
+
 
 function keyPressed(SPACEBAR) {
   document.location.reload();
 }
+// MOUSE DRAGGED
+/*
 function mouseDragged() {
   imageMode(CENTER);
    image(imagesOk[j], mouseX, mouseY, 256, 148);
   // image(imagesOk[j], mouseX, mouseY, width(imagesOk[j])/10, height(imagesOk[j])/10);
 }
+*/
+
 /*
 function mousePressed(){
   if (mouseY >= height-10 && mouseX >= 125 && mouseX <= 145){
@@ -154,7 +162,7 @@ function mousePressed(){
 }
 }
 */
-// codice telefono 
+// codice telefono
 function touchStarted() {
   if(j===20) {
     j=1;

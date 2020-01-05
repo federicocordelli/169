@@ -184,6 +184,7 @@ function touchEnded() {
 }
 
 function touchMoved() {
+  frameRate(15);
   imageMode(CENTER);
    image(imagesOk[j], mouseX, mouseY, 256, 148);
 }

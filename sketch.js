@@ -193,4 +193,42 @@ function touchMoved() {
 
 function windowResized() {
   resizeCanvas(windowWidth,windowHeight);
+
+//prova resize
+
+  background("#f0ffff");
+
+  frameRate(15);
+
+
+  strokeWeight(0);
+  textFont("Barlow");
+  textSize(20);
+  textStyle(NORMAL);
+  text("Spacebar to reset",10,height-35);
+  text("Click to skip",10,height-60);
+  text("Drag to recreate",10,height-85);
+  text("My twenty best shots in 16:9",10,height-110);
+  text("Photography portfolio",10,height-135);
+  text("More info on: ",10,height-10);
+  // text("behance", 125, height-10);
+  text("Navigator: ",width-110,height-60);
+  text("This website is designed by me",width-285,height-10);
+  // text(j,10,height-160);
+
+
+  link = createA("https://www.behance.net/Federico_cordelli?isa0=1",
+                      "behance", "_blank");
+
+   // Posotion the anchor objects
+   link.position(125, height-25);
+
+//new title
+   textSize(100);
+   textStyle(BOLD);
+   text("FEDERICO CORDELLI",10,100);
+   text("PHOTO PORTFOLIO",10,200);
+   text("THE BEST OF/16:9",10,300);
+   strokeWeight(8);
+   line(0,320,windowWidth,320);
 }

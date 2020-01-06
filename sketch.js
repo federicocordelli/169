@@ -190,3 +190,7 @@ function touchMoved() {
   imageMode(CENTER);
    image(imagesOk[j], mouseX, mouseY, 256, 148);
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth,windowHeight);
+}

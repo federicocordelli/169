@@ -216,13 +216,13 @@ function windowResized() {
   text("This website is designed by me",width-285,height-10);
   // text(j,10,height-160);
 
-
+/*
   link = createA("https://www.behance.net/Federico_cordelli?isa0=1",
                       "behance", "_blank");
 
    // Posotion the anchor objects
    link.position(125, height-25);
-
+*/
 //new title
    textSize(100);
    textStyle(BOLD);

@@ -44,7 +44,7 @@ function setup() {
   textFont("Barlow");
   textSize(20);
   textStyle(NORMAL);
-  text("Spacebar to reset",10,height-35);
+  text("Spacebar/resize to reset",10,height-35);
   text("Click to skip",10,height-60);
   text("Drag to recreate",10,height-85);
   text("My twenty best shots in 16:9",10,height-110);
@@ -205,7 +205,7 @@ function windowResized() {
   textFont("Barlow");
   textSize(20);
   textStyle(NORMAL);
-  text("Spacebar to reset",10,height-35);
+  text("Spacebar/resize to reset",10,height-35);
   text("Click to skip",10,height-60);
   text("Drag to recreate",10,height-85);
   text("My twenty best shots in 16:9",10,height-110);

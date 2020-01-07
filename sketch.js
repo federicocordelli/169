@@ -213,7 +213,7 @@ function windowResized() {
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
   text("Navigator: ",width-110,height-60);
-  text("This one-page site is designed by me",width-285,height-10);
+  text("This one-page site is designed by me",width-325,height-10);
   // text(j,10,height-160);
 
 /*

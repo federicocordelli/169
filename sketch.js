@@ -48,11 +48,11 @@ function setup() {
   text("Click to skip",10,height-60);
   text("Drag to recreate",10,height-85);
   text("My twenty best shots in 16:9",10,height-110);
-  text("Photography portfolio",10,height-135);
+  text("Photography mini-game",10,height-135);
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
   text("Navigator: ",width-110,height-60);
-  text("This website is designed by me",width-285,height-10);
+  text("This one-page site is designed by me",width-285,height-10);
   // text(j,10,height-160);
 
 
@@ -66,7 +66,7 @@ function setup() {
    textSize(100);
    textStyle(BOLD);
    text("FEDERICO CORDELLI",10,100);
-   text("PHOTO PORTFOLIO",10,200);
+   text("PHOTO APPETIZER",10,200);
    text("THE BEST OF/16:9",10,300);
    strokeWeight(8);
    line(0,320,windowWidth,320);
@@ -179,7 +179,7 @@ function touchEnded() {
     textSize(100);
     textStyle(BOLD);
     text("FEDERICO CORDELLI",10,100);
-    text("PHOTO PORTFOLIO",10,200);
+    text("PHOTO APPETIZER",10,200);
     text("THE BEST OF/16:9",10,300);
     strokeWeight(8);
     line(0,320,windowWidth,320);
@@ -209,11 +209,11 @@ function windowResized() {
   text("Click to skip",10,height-60);
   text("Drag to recreate",10,height-85);
   text("My twenty best shots in 16:9",10,height-110);
-  text("Photography portfolio",10,height-135);
+  text("Photography mini-game",10,height-135);
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
   text("Navigator: ",width-110,height-60);
-  text("This website is designed by me",width-285,height-10);
+  text("This one-page site is designed by me",width-285,height-10);
   // text(j,10,height-160);
 
 /*
@@ -227,7 +227,7 @@ function windowResized() {
    textSize(100);
    textStyle(BOLD);
    text("FEDERICO CORDELLI",10,100);
-   text("PHOTO PORTFOLIO",10,200);
+   text("PHOTO APPETIZER",10,200);
    text("THE BEST OF/16:9",10,300);
    strokeWeight(8);
    line(0,320,windowWidth,320);

@@ -51,8 +51,8 @@ function setup() {
   text("Photography mini-game",10,height-135);
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
-  text("Navigator: ",width-110,height-60);
-  text("This one-page site is designed by me",width-335,height-10);
+  text("Navigator: ",width-110,height-80);
+  text("This one-page site is designed by me",width-355,height-10);
   // text(j,10,height-160);
 
 
@@ -212,8 +212,8 @@ function windowResized() {
   text("Photography mini-game",10,height-135);
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
-  text("Navigator: ",width-110,height-60);
-  text("This one-page site is designed by me",width-335,height-10);
+  text("Navigator: ",width-110,height-80);
+  text("This one-page site is designed by me",width-355,height-10);
   // text(j,10,height-160);
 
 /*

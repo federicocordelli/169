@@ -51,7 +51,7 @@ function setup() {
   text("Photography mini-game",10,height-135);
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
-  text("Navigator: ",width-110,height-80);
+  text("Navigator: ",width-110,height-100);
   text("This one-page site is designed by me",width-355,height-10);
   // text(j,10,height-160);
 
@@ -173,7 +173,7 @@ function touchEnded() {
     }
     textSize(20);
     textStyle(NORMAL);
-    text(j-1,(width-10)-20*j,height-35);
+    text(j-1,(width-10)-20*j,height-55);
 
 //try
     textSize(100);
@@ -212,7 +212,7 @@ function windowResized() {
   text("Photography mini-game",10,height-135);
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
-  text("Navigator: ",width-110,height-80);
+  text("Navigator: ",width-110,height-100);
   text("This one-page site is designed by me",width-355,height-10);
   // text(j,10,height-160);
 

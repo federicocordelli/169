@@ -52,7 +52,7 @@ function setup() {
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
   text("Navigator: ",width-110,height-100);
-  text("This one-page site is designed by me",width-355,height-10);
+  text("This one-page site is designed by me",width-335,height-10);
   // text(j,10,height-160);
 
 
@@ -219,7 +219,7 @@ function windowResized() {
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
   text("Navigator: ",width-110,height-100);
-  text("This one-page site is designed by me",width-355,height-10);
+  text("This one-page site is designed by me",width-335,height-10);
   // text(j,10,height-160);
 
 /*

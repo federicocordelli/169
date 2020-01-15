@@ -189,8 +189,14 @@ function touchMoved() {
   // frameRate(15);
   imageMode(CENTER);
    image(imagesOk[j], mouseX, mouseY, 256, 148);
+   return false;
 }
 
+/*
+function touchMoved() {
+  return false;
+}
+*/
 function windowResized() {
   resizeCanvas(windowWidth,windowHeight);
 

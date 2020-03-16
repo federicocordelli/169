@@ -62,6 +62,7 @@ function setup() {
    // Posotion the anchor objects
    link.position(125, height-25);
 
+/*
 //new title
    textSize(100);
    textStyle(BOLD);
@@ -70,8 +71,14 @@ function setup() {
    text("THE BEST OF/16:9",10,300);
    strokeWeight(8);
    line(0,320,windowWidth,320);
-
-
+*/
+//new new title
+textSize(40);
+textStyle(BOLD);
+textLeading(40);
+text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9",10,40);
+strokeWeight(3);
+line(0,130,windowWidth,130);
 
   // put setup code here
 }
@@ -175,6 +182,7 @@ function touchEnded() {
     textStyle(NORMAL);
     text(j-1,(width-10)-20*j,height-55);
 
+/*
 //try
     textSize(100);
     textStyle(BOLD);
@@ -183,6 +191,14 @@ function touchEnded() {
     text("THE BEST OF/16:9",10,300);
     strokeWeight(8);
     line(0,320,windowWidth,320);
+    */
+//second trial
+    textSize(40);
+    textStyle(BOLD);
+    textLeading(40);
+    text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9",10,40);
+    strokeWeight(3);
+    line(0,130,windowWidth,130);
 }
 
 function touchMoved() {
@@ -229,6 +245,7 @@ function windowResized() {
    // Posotion the anchor objects
    link.position(125, height-25);
 */
+/*
 //new title
    textSize(100);
    textStyle(BOLD);
@@ -237,4 +254,12 @@ function windowResized() {
    text("THE BEST OF/16:9",10,300);
    strokeWeight(8);
    line(0,320,windowWidth,320);
+   */
+   // new new title
+   textSize(40);
+   textStyle(BOLD);
+   textLeading(40);
+   text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9",10,40);
+   strokeWeight(3);
+   line(0,130,windowWidth,130);
 }

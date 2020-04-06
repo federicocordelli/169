@@ -42,17 +42,17 @@ function setup() {
 
   strokeWeight(0);
   textFont("Barlow");
-  textSize(20);
+  textSize(15);
   textStyle(NORMAL);
-  text("Spacebar/resize to reset",10,height-35);
-  text("Click to skip",10,height-60);
-  text("Drag to recreate",10,height-85);
-  text("My twenty best shots in 16:9",10,height-110);
-  text("Photography mini-game",10,height-135);
+  text("Spacebar/resize to reset",10,height-28);
+  text("Click to skip",10,height-46);
+  text("Drag to recreate",10,height-64);
+  text("My twenty best shots in 16:9",10,height-82);
+  // text("Photography mini-game",10,height-125);
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
-  text("Navigator: ",width-110,height-100);
-  text("This one-page site is designed by me",width-335,height-10);
+  text("Navigator: ",width-90,height-82);
+  text("This one-page site is designed by me",width-260,height-10);
   // text(j,10,height-160);
 
 
@@ -60,7 +60,7 @@ function setup() {
                       "behance", "_blank");
 
    // Posotion the anchor objects
-   link.position(125, height-25);
+   link.position(98, height-25);
 
 /*
 //new title
@@ -73,12 +73,13 @@ function setup() {
    line(0,320,windowWidth,320);
 */
 //new new title
-textSize(40);
+textSize(30);
 textStyle(BOLD);
-textLeading(40);
-text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9",10,40);
-strokeWeight(3);
-line(0,130,windowWidth,130);
+textLeading(30);
+text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9",10,30);
+strokeWeight(2);
+line(0,100,windowWidth,100);
+line(0,height-100,windowWidth,height-100);
 
   // put setup code here
 }
@@ -193,12 +194,13 @@ function touchEnded() {
     line(0,320,windowWidth,320);
     */
 //second trial
-    textSize(40);
+    textSize(30);
     textStyle(BOLD);
-    textLeading(40);
-    text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9",10,40);
-    strokeWeight(3);
-    line(0,130,windowWidth,130);
+    textLeading(30);
+    text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9",10,30);
+    strokeWeight(2);
+    line(0,100,windowWidth,100);
+    line(0,height-100,windowWidth,height-100);
 }
 
 function touchMoved() {
@@ -225,17 +227,17 @@ function windowResized() {
 
   strokeWeight(0);
   textFont("Barlow");
-  textSize(20);
+  textSize(15);
   textStyle(NORMAL);
-  text("Spacebar/resize to reset",10,height-35);
-  text("Click to skip",10,height-60);
-  text("Drag to recreate",10,height-85);
-  text("My twenty best shots in 16:9",10,height-110);
-  text("Photography mini-game",10,height-135);
+  text("Spacebar/resize to reset",10,height-28);
+  text("Click to skip",10,height-46);
+  text("Drag to recreate",10,height-64);
+  text("My twenty best shots in 16:9",10,height-82);
+  // text("Photography mini-game",10,height-125);
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
-  text("Navigator: ",width-110,height-100);
-  text("This one-page site is designed by me",width-335,height-10);
+  text("Navigator: ",width-90,height-82);
+  text("This one-page site is designed by me",width-260,height-10);
   // text(j,10,height-160);
 
 /*
@@ -256,10 +258,11 @@ function windowResized() {
    line(0,320,windowWidth,320);
    */
    // new new title
-   textSize(40);
+   textSize(30);
    textStyle(BOLD);
-   textLeading(40);
-   text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9",10,40);
-   strokeWeight(3);
-   line(0,130,windowWidth,130);
+   textLeading(30);
+   text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9",10,30);
+   strokeWeight(2);
+   line(0,100,windowWidth,100);
+   line(0,height-100,windowWidth,height-100);
 }

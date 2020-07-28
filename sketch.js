@@ -81,10 +81,23 @@ strokeWeight(2);
 line(0,100,windowWidth,100);
 line(0,height-100,windowWidth,height-100);
 
+
+//graduated
+
+push();
+textSize(15);
+textStyle(BOLD);
+textLeading(15);
+fill('black');
+text("Communication design student graduated at Politecnico di Milano",10,120);
+pop();
+
   // put setup code here
 }
 
 function draw() {
+
+
   // clear();
 /*
   textSize(100);

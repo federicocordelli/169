@@ -253,6 +253,14 @@ function windowResized() {
   text("This one-page site is designed by me",width-260,height-10);
   // text(j,10,height-160);
 
+  push();
+  textSize(15);
+  textStyle(BOLD);
+  textLeading(15);
+  fill('black');
+  text("Communication design student graduated at Politecnico di Milano",10,120);
+  pop();
+  
 /*
   link = createA("https://www.behance.net/Federico_cordelli?isa0=1",
                       "behance", "_blank");

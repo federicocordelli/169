@@ -89,7 +89,8 @@ textSize(15);
 textStyle(BOLD);
 textLeading(15);
 fill('black');
-text("Communication design student graduated at Politecnico di Milano",10,120);
+text("Communication Design",10,120);
+text("Graduated from Politecnico di Milano",10,height-108);
 pop();
 
   // put setup code here
@@ -258,9 +259,10 @@ function windowResized() {
   textStyle(BOLD);
   textLeading(15);
   fill('black');
-  text("Communication design student graduated at Politecnico di Milano",10,120);
+  text("Communication Design",10,120);
+  text("Graduated from Politecnico di Milano",10,height-108);
   pop();
-  
+
 /*
   link = createA("https://www.behance.net/Federico_cordelli?isa0=1",
                       "behance", "_blank");

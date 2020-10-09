@@ -2,6 +2,8 @@ var imagesOk = [];
 var j = 1;
 var imagesVert = [];
 
+let slider;
+
 function preload(){
 
   for (var i=1; i<21; i++) {
@@ -43,12 +45,30 @@ function setup() {
 
   frameRate(15);
 
-  /*
+  strokeWeight(0);
+/*
   rectMode(CENTER);
   fill('red');
   rect(windowWidth/2,windowHeight/2,400,600);
-  */
+*/
+  fill('red');
+  textFont("Barlow");
+  textSize(25);
+  textStyle(BOLD);
+  textLeading(25);
+  text("'INSTRUCTIONS FOR USE' \nThings you can find here:\n \n \n.20 photos in 16:9 [resizables] \n.20 photos in 2:3 \n.an interactive way to visualize them \n.my contacts \n \nJUST CLICK ",windowWidth/2 - 193,windowHeight/2 - 100);
 
+
+    slider = createSlider(128, 512, 256);
+    slider.position(width-180, 113);
+    slider.style('width', '150px');
+    slider.addClass('slider');
+
+
+
+
+
+  fill('black');
   strokeWeight(0);
   textFont("Barlow");
   textSize(15);
@@ -99,6 +119,7 @@ textStyle(BOLD);
 textLeading(15);
 fill('black');
 text("Communication Design",10,120);
+text("16:9 photos resizer:",width-310,120);
 text("Graduated from Politecnico di Milano",10,height-108);
 text("To contact me: cordelli.federico@gmail.com",width-310,height-108);
 pop();
@@ -108,7 +129,7 @@ pop();
 
 function draw() {
 
-
+ //let valslider = slider.value();
   // clear();
 /*
   textSize(100);
@@ -234,9 +255,12 @@ function touchEnded() {
 }
 
 function touchMoved() {
+
+  let valslider = slider.value();
   // frameRate(15);
   imageMode(CENTER);
-   image(imagesOk[j], mouseX, mouseY, 256, 148);
+   //image(imagesOk[j], mouseX, mouseY, 256, 148);
+   image(imagesOk[j], mouseX, mouseY, valslider, (valslider/16)*9);
    return false;
 }
 
@@ -276,6 +300,7 @@ function windowResized() {
   textLeading(15);
   fill('black');
   text("Communication Design",10,120);
+  text("16:9 photos resizer:",width-310,120);
   text("Graduated from Politecnico di Milano",10,height-108);
   text("To contact me: cordelli.federico@gmail.com",width-310,height-108);
   pop();

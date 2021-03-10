@@ -4,15 +4,19 @@ var imagesVert = [];
 
 let slider;
 
+let myFont;
+
 function preload(){
 
   for (var i=1; i<21; i++) {
     imagesOk[i] = loadImage("addons/"+i+".jpg");
   }
 
-  for (var k=1; k<20; k++) {
+  for (var k=1; k<21; k++) {
     imagesVert[k] = loadImage("addons/vertical/f"+k+".jpg");
   }
+
+  myFont = loadFont('addons/SuisseIntl-Medium.otf');
 }
 /*
 let imagesTotal = [];
@@ -41,9 +45,22 @@ fino a qui */
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  background("#f0ffff");
+  background("#ffffff");
 
   frameRate(15);
+
+
+//BUTTON DAJETE
+  button = createButton('//RESET');
+  button.position(width/2, height-80);
+  button.mousePressed(resizety);
+  button.addClass('button');
+
+  button = createButton('//SCREEN');
+  button.position(width/2-7, 82);
+  button.mousePressed(savability);
+  button.addClass('button1');
+
 
   strokeWeight(0);
 /*
@@ -52,15 +69,18 @@ function setup() {
   rect(windowWidth/2,windowHeight/2,400,600);
 */
   fill('red');
-  textFont("Barlow");
-  textSize(25);
-  textStyle(BOLD);
+  textFont(myFont);
+  textSize(22);
+  //textStyle(BOLD);
   textLeading(25);
-  text("'INSTRUCTIONS FOR USE' \nThings you can find here:\n \n \n.20 photos in 16:9 [resizables] \n.20 photos in 2:3 \n.an interactive way to visualize them \n.my contacts \n \nJUST CLICK ",windowWidth/2 - 193,windowHeight/2 - 100);
-
+  text("\n \n \n.20 photos in 16:9 [resizables] \n.20 photos in 2:3 \n.an interactive way to visualize them \n.my contacts \n \n.if you screen and use the pick \nplease tag me (@fristy_ on instagram) \n \n*JUST CLICK* ",windowWidth/2 - 193,windowHeight/2 - 100);
+  textSize(26);
+  text("'INSTRUCTIONS FOR USE'",windowWidth/2 - 193,windowHeight/2 - 100);
+  textSize(15);
+  text("*Things you can find here & rules:*",windowWidth/2 - 193,windowHeight/2 - 80);
 
     slider = createSlider(128, 512, 256);
-    slider.position(width-180, 113);
+    slider.position(width-180, 143);
     slider.style('width', '150px');
     slider.addClass('slider');
 
@@ -70,18 +90,18 @@ function setup() {
 
   fill('black');
   strokeWeight(0);
-  textFont("Barlow");
+  textFont(myFont);
   textSize(15);
-  textStyle(NORMAL);
-  text("Spacebar/resize to reset",10,height-28);
+  //textStyle(NORMAL);
+  //text("Spacebar/resize to reset",10,height-28);
   text("Click to skip",10,height-46);
   text("Drag to recreate",10,height-64);
   text("My twenty best shots in 16:9 & 2:3",10,height-82);
   // text("Photography mini-game",10,height-125);
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
-  text("Navigator: ",width-90,height-82);
-  text("This one-page site is designed by me",width-260,height-10);
+  text("Photo n°: ",width-84,height-82);
+  text("This one-page site is designed by me",width-280,height-10);
   // text(j,10,height-160);
 
 
@@ -89,7 +109,8 @@ function setup() {
                       "behance", "_blank");
 
    // Posotion the anchor objects
-   link.position(98, height-25);
+   link.position(108, height-24);
+   link.addClass('a');
 
 /*
 //new title
@@ -102,26 +123,45 @@ function setup() {
    line(0,320,windowWidth,320);
 */
 //new new title
-textSize(30);
-textStyle(BOLD);
-textLeading(30);
-text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
-strokeWeight(2);
-line(0,100,windowWidth,100);
+push();
+//textSize(30);
+textSize(48);
+noFill();
+stroke('black');
+strokeWeight(0.7);
+//textStyle(BOLD);
+//textLeading(30);
+textLeading(60);
+//text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
+text("\nNOT A SLIDESHOW",70,60);
+fill('black');
+text("FEDERICO CORDELLI",70,73);
+strokeWeight(1);
+line(0,130,windowWidth,130);
 line(0,height-100,windowWidth,height-100);
+pop();
+
+push();
+textSize(10);
+text("Class 1998", 10, 15);
+textAlign(CENTER);
+text("Horror Vacui", width/2, 15);
+textAlign(RIGHT);
+text("From Italy", width-10, 15);
+pop();
 
 
 //graduated
 
 push();
 textSize(15);
-textStyle(BOLD);
+//textStyle(BOLD);
 textLeading(15);
 fill('black');
-text("Communication Design",10,120);
-text("16:9 photos resizer:",width-310,120);
+text("Communication Design",10,150);
+text("16:9 photos resizer:",width-330,150);
 text("Graduated from Politecnico di Milano",10,height-108);
-text("To contact me: cordelli.federico@gmail.com",width-310,height-108);
+text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
 pop();
 
   // put setup code here
@@ -196,10 +236,15 @@ function mouseClicked() {
 }
 */
 
+function resizety() {document.location.reload();}
 
+function savability() {saveCanvas('FC169_screen_thank_you', 'png');}
+
+/*
 function keyPressed(SPACEBAR) {
   document.location.reload();
 }
+*/
 // MOUSE DRAGGED
 /*
 function mouseDragged() {
@@ -224,9 +269,18 @@ function touchEnded() {
   } else if(j<20) {
   j++;
     }
+    push();
+    //center(CENTER);
+    rect(width-65, height-70, 40, 30, 10, 10, 10, 10);
+    pop();
+    push();
+    fill('white');
     textSize(20);
     textStyle(NORMAL);
-    text(j-1,(width-10)-20*j,height-55);
+    //text(j-1,(width-10)-20*j,height-50);
+    text(j-1,width-50,height-48);
+    pop();
+
 
 /*
 //try
@@ -239,14 +293,43 @@ function touchEnded() {
     line(0,320,windowWidth,320);
     */
 //second trial
+/*
     textSize(30);
-    textStyle(BOLD);
+    //textStyle(BOLD);
     textLeading(30);
     text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
     strokeWeight(2);
+*/
+    push();
+    //textSize(30);
+    textSize(48);
+    noFill();
+    stroke('black');
+    strokeWeight(0.7);
+    //textStyle(BOLD);
+    //textLeading(30);
+    textLeading(60);
+    //text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
+    text("\nNOT A SLIDESHOW",70,60);
+    fill('black');
+    text("FEDERICO CORDELLI",70,73);
+    strokeWeight(1);
+    line(0,130,windowWidth,130);
+    line(0,height-100,windowWidth,height-100);
+    pop();
+
+    push();
+    textSize(10);
+    text("Class 1998", 10, 15);
+    textAlign(CENTER);
+    text("Horror Vacui", width/2, 15);
+    textAlign(RIGHT);
+    text("From Italy", width-10, 15);
+    pop();
+    /*
     line(0,100,windowWidth,100);
     line(0,height-100,windowWidth,height-100);
-
+    */
     //vertical try
     imageMode(CENTER);
      image(imagesVert[j], windowWidth/2, windowHeight/2, 400, 600);
@@ -274,35 +357,35 @@ function windowResized() {
 
 //prova resize
 
-  background("#f0ffff");
+  background("#ffffff");
 
   frameRate(15);
 
 
   strokeWeight(0);
-  textFont("Barlow");
+  textFont(myFont);
   textSize(15);
-  textStyle(NORMAL);
-  text("Spacebar/resize to reset",10,height-28);
+  //textStyle(NORMAL);
+  //text("Spacebar/resize to reset",10,height-28);
   text("Click to skip",10,height-46);
   text("Drag to recreate",10,height-64);
   text("My twenty best shots in 16:9 & 2:3",10,height-82);
   // text("Photography mini-game",10,height-125);
   text("More info on: ",10,height-10);
   // text("behance", 125, height-10);
-  text("Navigator: ",width-90,height-82);
-  text("This one-page site is designed by me",width-260,height-10);
+  text("Photo n°: ",width-84,height-82);
+  text("This one-page site is designed by me",width-280,height-10);
   // text(j,10,height-160);
 
   push();
   textSize(15);
-  textStyle(BOLD);
+  //textStyle(BOLD);
   textLeading(15);
   fill('black');
-  text("Communication Design",10,120);
-  text("16:9 photos resizer:",width-310,120);
+  text("Communication Design",10,150);
+  text("16:9 photos resizer:",width-330,150);
   text("Graduated from Politecnico di Milano",10,height-108);
-  text("To contact me: cordelli.federico@gmail.com",width-310,height-108);
+  text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
   pop();
 
 /*
@@ -322,12 +405,42 @@ function windowResized() {
    strokeWeight(8);
    line(0,320,windowWidth,320);
    */
+
+   push();
+   //textSize(30);
+   textSize(48);
+   noFill();
+   stroke('black');
+   strokeWeight(0.7);
+   //textStyle(BOLD);
+   //textLeading(30);
+   textLeading(60);
+   //text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
+   text("\nNOT A SLIDESHOW",70,60);
+   fill('black');
+   text("FEDERICO CORDELLI",70,73);
+   strokeWeight(1);
+   line(0,130,windowWidth,130);
+   line(0,height-100,windowWidth,height-100);
+   pop();
+
+   push();
+   textSize(10);
+   text("Class 1998", 10, 15);
+   textAlign(CENTER);
+   text("Horror Vacui", width/2, 15);
+   textAlign(RIGHT);
+   text("From Italy", width-10, 15);
+   pop();
+   /*
    // new new title
    textSize(30);
-   textStyle(BOLD);
+   //textStyle(BOLD);
    textLeading(30);
    text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
    strokeWeight(2);
+
    line(0,100,windowWidth,100);
    line(0,height-100,windowWidth,height-100);
+   */
 }

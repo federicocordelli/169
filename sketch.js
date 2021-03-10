@@ -53,12 +53,12 @@ function setup() {
 //BUTTON DAJETE
   button = createButton('//RESET');
   button.position(width/2, height-80);
-  button.mousePressed(resizety);
+  button.mouseClicked(resizety);
   button.addClass('button');
 
   button = createButton('//SCREEN');
-  button.position(width/2-7, 82);
-  button.mousePressed(savability);
+  button.position(width/2-7, 140);
+  button.mouseClicked(savability);
   button.addClass('button1');
 
 
@@ -236,9 +236,15 @@ function mouseClicked() {
 }
 */
 
-function resizety() {document.location.reload();}
+function resizety() {
+  document.location.reload();
+  return false;
+}
 
-function savability() {saveCanvas('FC169_screen_thank_you', 'png');}
+function savability() {
+  saveCanvas('FC169_screen_thank_you', 'png');
+  return false;
+}
 
 /*
 function keyPressed(SPACEBAR) {

@@ -8,7 +8,7 @@ css document
   width: 100%; /* Full-width */
   height: 2px; /* Specified height */
   border-radius: 5px;
-  background: #000000; /* Grey background */
+  background: #ff0000; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -21,7 +21,7 @@ css document
   width: 13px; /* Set a specific slider handle width */
   height: 13px; /* Slider handle height */
   border-radius: 50%;
-  background: #000000; /* Green background */
+  background: #ff0000; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
 
@@ -29,7 +29,7 @@ css document
   width: 13px; /* Set a specific slider handle width */
   height: 13px; /* Slider handle height */
   border-radius: 50%;
-  background: #000000; /* Green background */
+  background: #ff0000; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
 
@@ -97,6 +97,42 @@ css document
   background-color: #ffffff; /* Green */
   border: 1px solid #000000;
   color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+.button2 {
+  background-color: #000000; /* Green */
+  border: 1px solid #ffffff;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+.button2:hover {
+  background-color: #ffffff; /* Green */
+  border: 1px solid #000000;
+  color: black;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+.button2:active {
+  background-color: #000000; /* Green */
+  border: 1px solid #ffffff;
+  color: white;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;

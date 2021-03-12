@@ -1,87 +1,66 @@
+//PERSONAL FEDERICO CORDELLI WEB SITE "NOT A SLIDESHOW"
+
+//The Base Of All The Site
 var imagesOk = [];
 var j = 1;
 var imagesVert = [];
 
+//Slider
 let slider;
 
+//Font
 let myFont;
 
+//Values Of The Black & White (For the Dark Mode)
 let value1 = 0;
 let value2 = 255;
 
 function preload(){
 
+  //Loading 16:9 Images
   for (var i=1; i<21; i++) {
     imagesOk[i] = loadImage("addons/"+i+".jpg");
   }
 
+  //Loading 2:3 Images
   for (var k=1; k<21; k++) {
     imagesVert[k] = loadImage("addons/vertical/f"+k+".jpg");
   }
 
+  //Loading Font
   myFont = loadFont('addons/SuisseIntl-Medium.otf');
 }
-/*
-let imagesTotal = [];
-
-for (var i = 0; i < 4; i++) {
-  imagesTotal[i] = loadImage('addons/'+i+'.jpg');
-}
-*/
-/*
-imagesTotal[0] = loadImage('addons/1.jpg');
-imagesTotal[1] = loadImage('addons/2.jpg');
-imagesTotal[2] = loadImage('addons/3.jpg');
-imagesTotal[3] = loadImage('addons/4.jpg');
-*/
-/* da qui in poi
-  img = loadImage('addons/1.jpg');
-  img1 = loadImage('addons/2.jpg');
-  img2 = loadImage('addons/3.jpg');
-  img3 = loadImage('addons/4.jpg');
-  // put preload code here
-
-}
-
-var images = ["img","img1", "img2", "img3"];
-fino a qui */
 
 function setup() {
+  //Canvas
   createCanvas(windowWidth,windowHeight);
   background(value2, value2, value2);
 
   frameRate(15);
 
 
-//BUTTON DAJETE
+  //Button To Reset
   button = createButton('//RESET');
   button.position(width/2, height-80);
   button.mouseClicked(resizety);
   button.addClass('button');
 
+  //Button To Screen The Canvas (Without HTML Eelements)
   button = createButton('//SCREEN');
   button.position(width/2-7, 140);
-  //button.position(width/2-7, 82);
   button.mouseClicked(savability);
   button.addClass('button1');
 
+  //Button To The Dark Mode
   button = createButton('//LUX');
   button.position(width-100, 85);
-  //button.position(width/2-7, 82);
-  button.mouseClicked(darkmodety);
+  button.mousePressed(darkmodety);
   button.addClass('button2');
 
-
-  strokeWeight(0);
-/*
-  rectMode(CENTER);
-  fill('red');
-  rect(windowWidth/2,windowHeight/2,400,600);
-*/
+  //Instructions Of Use For The User
   fill('red');
   textFont(myFont);
   textSize(22);
-  //textStyle(BOLD);
   textLeading(25);
   text("\n \n \n.20 photos in 16:9 [resizables] \n.20 photos in 2:3 \n.an interactive way to visualize them \n.my contacts \n \n.if you screen and use the pick \nplease tag me (@fristy_ on instagram) \n \n*JUST CLICK* ",windowWidth/2 - 193,windowHeight/2 - 100);
   textSize(26);
@@ -89,6 +68,8 @@ function setup() {
   textSize(15);
   text("*Things you can find here & rules:*",windowWidth/2 - 193,windowHeight/2 - 80);
 
+
+    //Slider Images Resizer
     slider = createSlider(128, 512, 256);
     slider.position(width-180, 143);
     slider.style('width', '150px');
@@ -96,54 +77,32 @@ function setup() {
 
 
 
-
+  //Scripts Down The Second Line
   push();
   fill(value1, value1, value1);
   strokeWeight(0);
   textFont(myFont);
   textSize(15);
-  //textStyle(NORMAL);
-  //text("Spacebar/resize to reset",10,height-28);
   text("Click to skip",10,height-46);
   text("Drag to recreate",10,height-64);
   text("My twenty best shots in 16:9 & 2:3",10,height-82);
-  // text("Photography mini-game",10,height-125);
   text("More info on: ",10,height-10);
-  // text("behance", 125, height-10);
   text("Photo n°: ",width-84,height-82);
   text("This one-page site is designed & developed by me",width-380,height-10);
   pop();
-  // text(j,10,height-160);
 
-
-  link = createA("https://www.behance.net/Federico_cordelli?isa0=1",
-                      "behance", "_blank");
-
-   // Posotion the anchor objects
+  //link To Behance
+  link = createA("https://www.behance.net/Federico_cordelli?isa0=1","behance", "_blank");
    link.position(108, height-24);
    link.addClass('a');
 
-/*
-//new title
-   textSize(100);
-   textStyle(BOLD);
-   text("FEDERICO CORDELLI",10,100);
-   text("PHOTO APPETIZER",10,200);
-   text("THE BEST OF/16:9",10,300);
-   strokeWeight(8);
-   line(0,320,windowWidth,320);
-*/
-//new new title
+//Title
 push();
-//textSize(30);
 textSize(48);
 noFill();
 stroke(value1, value1, value1);
 strokeWeight(0.7);
-//textStyle(BOLD);
-//textLeading(30);
 textLeading(60);
-//text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
 text("\nNOT A SLIDESHOW",70,60);
 fill(value1, value1, value1);
 text("FEDERICO CORDELLI",70,73);
@@ -152,6 +111,7 @@ line(0,130,windowWidth,130);
 line(0,height-100,windowWidth,height-100);
 pop();
 
+//Upside Type Frame
 push();
 fill(value1, value1, value1);
 textSize(10);
@@ -162,103 +122,37 @@ textAlign(RIGHT);
 text("From Italy", width-10, 15);
 pop();
 
-
-//graduated
-
+//Internal Type Frame
 push();
 fill(value1, value1, value1);
 textSize(15);
-//textStyle(BOLD);
 textLeading(15);
-//fill(value1, value1, value1);
 text("Communication Design",10,150);
 text("16:9 photos resizer:",width-330,150);
 text("Graduated from Politecnico di Milano",10,height-108);
 text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
 pop();
 
-  // put setup code here
 }
+
 
 function draw() {
-
- //let valslider = slider.value();
-  // clear();
-/*
-  textSize(100);
-  textStyle(BOLD);
-  text("FEDERICO CORDELLI",10,100);
-  text("PHOTO PORTFOLIO",10,200);
-  text("THE BEST OF/16:9",10,300);
-  strokeWeight(8);
-  line(0,320,windowWidth,320);
-*/
-/*
-  imageMode(CENTER);
-  image(imagesOk[j], mouseX, mouseY, 256, 148);
-*/
-  /*
-  strokeWeight(0);
-  textFont("Barlow");
-  textSize(40);
-  textStyle(NORMAL);
-  text("Spacebar to reset",10,height-10);
-  */
-
-
-
-
-  // put drawing code here
+//Nothing Here
 }
 
-
-/*
-function mouseDragged() {
-  image(imagesOk[3], mouseX, mouseY,256,148);
-
-  for (var i=0; i<4; i++) {
-    image(imagesOk[i], mouseX, mouseY, 256, 148);
-  }
-
-
-  imageMode(CENTER);
-  image(img2,mouseX,mouseY,256,148);
-
-}
-*/
-// MOUSE CLICKED
-/*
-function mouseClicked() {
-  if(j===20) {
-    j=1;
-  } else if(j<20) {
-  j++;
-    }
-    textSize(20);
-    textStyle(NORMAL);
-    text(j-1,(width-10)-20*j,height-35);
-
-//try
-    textSize(100);
-    textStyle(BOLD);
-    text("FEDERICO CORDELLI",10,100);
-    text("PHOTO PORTFOLIO",10,200);
-    text("THE BEST OF/16:9",10,300);
-    strokeWeight(8);
-    line(0,320,windowWidth,320);
-}
-*/
-
+//Resize Button Function
 function resizety() {
   document.location.reload();
   return false;
 }
 
+//Save Screen
 function savability() {
   saveCanvas('FC169_screen_thank_you', 'png');
   return false;
 }
 
+//Dark Mode
 function darkmodety() {
   if (value1 === 0) {
     value1 = 255;
@@ -268,28 +162,26 @@ function darkmodety() {
 
   if (value2 === 255) {
     value2 = 0;
+    //Change Background Colot
     background(value2, value2, value2);
+
+    //Scripts Down The Second Line Negative
     push();
     fill(value1, value1, value1);
     strokeWeight(0);
     textFont(myFont);
     textSize(15);
-    //textStyle(NORMAL);
-    //text("Spacebar/resize to reset",10,height-28);
     text("Click to skip",10,height-46);
     text("Drag to recreate",10,height-64);
     text("My twenty best shots in 16:9 & 2:3",10,height-82);
-    // text("Photography mini-game",10,height-125);
     text("More info on: ",10,height-10);
-    // text("behance", 125, height-10);
     text("Photo n°: ",width-84,height-82);
     text("This one-page site is designed & developed by me",width-380,height-10);
     pop();
-    // text(j,10,height-160);
 
+    //Internal Type Frame
     push();
     textSize(15);
-    //textStyle(BOLD);
     textLeading(15);
     fill(value1, value1, value1);
     text("Communication Design",10,150);
@@ -298,34 +190,13 @@ function darkmodety() {
     text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
     pop();
 
-  /*
-    link = createA("https://www.behance.net/Federico_cordelli?isa0=1",
-                        "behance", "_blank");
-
-     // Posotion the anchor objects
-     link.position(125, height-25);
-  */
-  /*
-  //new title
-     textSize(100);
-     textStyle(BOLD);
-     text("FEDERICO CORDELLI",10,100);
-     text("PHOTO APPETIZER",10,200);
-     text("THE BEST OF/16:9",10,300);
-     strokeWeight(8);
-     line(0,320,windowWidth,320);
-     */
-
+     //Title Negative
      push();
-     //textSize(30);
      textSize(48);
      noFill();
      stroke(value1, value1, value1);
      strokeWeight(0.7);
-     //textStyle(BOLD);
-     //textLeading(30);
      textLeading(60);
-     //text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
      text("\nNOT A SLIDESHOW",70,60);
      fill(value1, value1, value1);
      text("FEDERICO CORDELLI",70,73);
@@ -334,6 +205,7 @@ function darkmodety() {
      line(0,height-100,windowWidth,height-100);
      pop();
 
+     //Upside Type Frame Negative
      push();
      fill(value1, value1, value1);
      textSize(10);
@@ -345,28 +217,25 @@ function darkmodety() {
      pop();
   } else {
     value2 = 255;
+    //Change the Background Color
     background(value2, value2, value2);
+    //Scripts Down The Second Line Positive
     push();
     fill(value1, value1, value1);
     strokeWeight(0);
     textFont(myFont);
     textSize(15);
-    //textStyle(NORMAL);
-    //text("Spacebar/resize to reset",10,height-28);
     text("Click to skip",10,height-46);
     text("Drag to recreate",10,height-64);
     text("My twenty best shots in 16:9 & 2:3",10,height-82);
-    // text("Photography mini-game",10,height-125);
     text("More info on: ",10,height-10);
-    // text("behance", 125, height-10);
     text("Photo n°: ",width-84,height-82);
     text("This one-page site is designed & developed by me",width-380,height-10);
     pop();
-    // text(j,10,height-160);
 
+    //Internal Type Frame Positive
     push();
     textSize(15);
-    //textStyle(BOLD);
     textLeading(15);
     fill(value1, value1, value1);
     text("Communication Design",10,150);
@@ -375,34 +244,13 @@ function darkmodety() {
     text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
     pop();
 
-  /*
-    link = createA("https://www.behance.net/Federico_cordelli?isa0=1",
-                        "behance", "_blank");
-
-     // Posotion the anchor objects
-     link.position(125, height-25);
-  */
-  /*
-  //new title
-     textSize(100);
-     textStyle(BOLD);
-     text("FEDERICO CORDELLI",10,100);
-     text("PHOTO APPETIZER",10,200);
-     text("THE BEST OF/16:9",10,300);
-     strokeWeight(8);
-     line(0,320,windowWidth,320);
-     */
-
+     //Title Positive
      push();
-     //textSize(30);
      textSize(48);
      noFill();
      stroke(value1, value1, value1);
      strokeWeight(0.7);
-     //textStyle(BOLD);
-     //textLeading(30);
      textLeading(60);
-     //text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
      text("\nNOT A SLIDESHOW",70,60);
      fill(value1, value1, value1);
      text("FEDERICO CORDELLI",70,73);
@@ -411,6 +259,7 @@ function darkmodety() {
      line(0,height-100,windowWidth,height-100);
      pop();
 
+     //Upside Type Frame Positive
      push();
      fill(value1, value1, value1);
      textSize(10);
@@ -423,37 +272,17 @@ function darkmodety() {
   }
 }
 
-/*
-function keyPressed(SPACEBAR) {
-  document.location.reload();
-}
-*/
-// MOUSE DRAGGED
-/*
-function mouseDragged() {
-  imageMode(CENTER);
-   image(imagesOk[j], mouseX, mouseY, 256, 148);
-  // image(imagesOk[j], mouseX, mouseY, width(imagesOk[j])/10, height(imagesOk[j])/10);
-}
-*/
-
-/*
-function mousePressed(){
-  if (mouseY >= height-10 && mouseX >= 125 && mouseX <= 145){
-    //range accounting for text length
-    window.open("https://federicocordelli.github.io/", "_self");
-}
-}
-*/
-// codice telefono
+//Click Function
 function touchEnded() {
+  //Change Images
   if(j===20) {
     j=1;
   } else if(j<20) {
   j++;
     }
+
+    //Photo Number
     push();
-    //center(CENTER);
     fill(value1, value1, value1);
     rect(width-65, height-70, 40, 30, 10, 10, 10, 10);
     pop();
@@ -461,39 +290,16 @@ function touchEnded() {
     fill(value2, value2, value2);
     textSize(20);
     textStyle(NORMAL);
-    //text(j-1,(width-10)-20*j,height-50);
     text(j-1,width-50,height-48);
     pop();
 
-
-/*
-//try
-    textSize(100);
-    textStyle(BOLD);
-    text("FEDERICO CORDELLI",10,100);
-    text("PHOTO APPETIZER",10,200);
-    text("THE BEST OF/16:9",10,300);
-    strokeWeight(8);
-    line(0,320,windowWidth,320);
-    */
-//second trial
-/*
-    textSize(30);
-    //textStyle(BOLD);
-    textLeading(30);
-    text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
-    strokeWeight(2);
-*/
+    //Title
     push();
-    //textSize(30);
     textSize(48);
     noFill();
     stroke(value1, value1, value1);
     strokeWeight(0.7);
-    //textStyle(BOLD);
-    //textLeading(30);
     textLeading(60);
-    //text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
     text("\nNOT A SLIDESHOW",70,60);
     fill(value1, value1, value1);
     text("FEDERICO CORDELLI",70,73);
@@ -502,6 +308,7 @@ function touchEnded() {
     line(0,height-100,windowWidth,height-100);
     pop();
 
+    //Upside Type Frame
     push();
     fill(value1, value1, value1);
     textSize(10);
@@ -511,62 +318,51 @@ function touchEnded() {
     textAlign(RIGHT);
     text("From Italy", width-10, 15);
     pop();
-    /*
-    line(0,100,windowWidth,100);
-    line(0,height-100,windowWidth,height-100);
-    */
-    //vertical try
+
+    //Images 2:3
     imageMode(CENTER);
      image(imagesVert[j], windowWidth/2, windowHeight/2, 400, 600);
      return false;
 
 }
 
+//Drag Function
 function touchMoved() {
 
+  //Slider Value
   let valslider = slider.value();
-  // frameRate(15);
+
+  //Images 16:9
   imageMode(CENTER);
-   //image(imagesOk[j], mouseX, mouseY, 256, 148);
    image(imagesOk[j], mouseX, mouseY, valslider, (valslider/16)*9);
    return false;
 }
 
-/*
-function touchMoved() {
-  return false;
-}
-*/
 function windowResized() {
+
+  //Layout Resized
   resizeCanvas(windowWidth,windowHeight);
-
-//prova resize
-
   background(value2, value2, value2);
 
   frameRate(15);
 
+  //scripts down the second line
   push();
   fill(value1, value1, value1);
   strokeWeight(0);
   textFont(myFont);
   textSize(15);
-  //textStyle(NORMAL);
-  //text("Spacebar/resize to reset",10,height-28);
   text("Click to skip",10,height-46);
   text("Drag to recreate",10,height-64);
   text("My twenty best shots in 16:9 & 2:3",10,height-82);
-  // text("Photography mini-game",10,height-125);
   text("More info on: ",10,height-10);
-  // text("behance", 125, height-10);
   text("Photo n°: ",width-84,height-82);
   text("This one-page site is designed & developed by me",width-380,height-10);
   pop();
-  // text(j,10,height-160);
 
+  //Internal Type Frame
   push();
   textSize(15);
-  //textStyle(BOLD);
   textLeading(15);
   fill(value1, value1, value1);
   text("Communication Design",10,150);
@@ -575,34 +371,13 @@ function windowResized() {
   text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
   pop();
 
-/*
-  link = createA("https://www.behance.net/Federico_cordelli?isa0=1",
-                      "behance", "_blank");
-
-   // Posotion the anchor objects
-   link.position(125, height-25);
-*/
-/*
-//new title
-   textSize(100);
-   textStyle(BOLD);
-   text("FEDERICO CORDELLI",10,100);
-   text("PHOTO APPETIZER",10,200);
-   text("THE BEST OF/16:9",10,300);
-   strokeWeight(8);
-   line(0,320,windowWidth,320);
-   */
-
+   //Title
    push();
-   //textSize(30);
    textSize(48);
    noFill();
    stroke(value1, value1, value1);
    strokeWeight(0.7);
-   //textStyle(BOLD);
-   //textLeading(30);
    textLeading(60);
-   //text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
    text("\nNOT A SLIDESHOW",70,60);
    fill(value1, value1, value1);
    text("FEDERICO CORDELLI",70,73);
@@ -611,6 +386,7 @@ function windowResized() {
    line(0,height-100,windowWidth,height-100);
    pop();
 
+   //Upside Type Frame
    push();
    fill(value1, value1, value1);
    textSize(10);
@@ -620,15 +396,5 @@ function windowResized() {
    textAlign(RIGHT);
    text("From Italy", width-10, 15);
    pop();
-   /*
-   // new new title
-   textSize(30);
-   //textStyle(BOLD);
-   textLeading(30);
-   text("FEDERICO CORDELLI \nPHOTO APPETIZER \nTHE BEST OF/16:9 & 2:3",10,30);
-   strokeWeight(2);
 
-   line(0,100,windowWidth,100);
-   line(0,height-100,windowWidth,height-100);
-   */
 }

@@ -35,7 +35,7 @@ css document
 
 .button {
   background-color: #FF0000; /* Green */
-  border: none;
+  border: 1px solid #FFFFFF;
   color: white;
   padding: 10px 15px;
   text-align: center;
@@ -133,6 +133,42 @@ css document
   background-color: #000000; /* Green */
   border: 1px solid #ffffff;
   color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+.button3 {
+  background-color: #FFFFFF; /* Green */
+  border: 1px solid #FF0000;
+  color: red;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+.button3:hover {
+  background-color: #ff0000; /* Green */
+  border: 1px solid #FFFFFF;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+.button3:active {
+  background-color: #FFFFFF; /* Green */
+  border: 1px solid #FF0000;
+  color: red;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;

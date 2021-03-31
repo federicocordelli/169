@@ -15,6 +15,74 @@ let myFont;
 let value1 = 0;
 let value2 = 255;
 
+//Clickable LUX
+myButton = new Clickable();
+
+//Clickable LUX Attributes
+myButton.color = "#000000";
+myButton.cornerRadius = 20;
+myButton.strokeWeight = 1;
+myButton.stroke = "#ffffff";
+myButton.text = "//LUX";
+myButton.textColor = "#ffffff";
+myButton.textSize = 25;
+myButton.textFont = "SuisseIntl-Medium";
+myButton.textScaled = false;
+myButton.width = 200;
+myButton.height = 80;
+myButton.locate(10, 300);
+
+//Clickable screen
+screenButton = new Clickable();
+
+//Clickable screen Attributes
+screenButton.color = "#ffffff";
+screenButton.cornerRadius = 20;
+screenButton.strokeWeight = 1;
+screenButton.stroke = "#000000";
+screenButton.text = "//SCREEN";
+screenButton.textColor = "#000000";
+screenButton.textSize = 25;
+screenButton.textFont = "SuisseIntl-Medium";
+screenButton.textScaled = false;
+screenButton.width = 200;
+screenButton.height = 80;
+screenButton.locate(10, 400);
+
+//Clickable wash
+washButton = new Clickable();
+
+//Clickable wash Attributes
+washButton.color = "#ffffff";
+washButton.cornerRadius = 20;
+washButton.strokeWeight = 1;
+washButton.stroke = "#ff0000";
+washButton.text = "//WASH";
+washButton.textColor = "#ff0000";
+washButton.textSize = 25;
+washButton.textFont = "SuisseIntl-Medium";
+washButton.textScaled = false;
+washButton.width = 200;
+washButton.height = 80;
+washButton.locate(10, 500);
+
+//Clickable RESET
+resetButton = new Clickable();
+
+//Clickable RESET Attributes
+resetButton.color = "#ff0000";
+resetButton.cornerRadius = 20;
+resetButton.strokeWeight = 1;
+resetButton.stroke = "#ffffff";
+resetButton.text = "//RESET";
+resetButton.textColor = "#ffffff";
+resetButton.textSize = 25;
+resetButton.textFont = "SuisseIntl-Medium";
+resetButton.textScaled = false;
+resetButton.width = 200;
+resetButton.height = 80;
+resetButton.locate(10, 600);
+
 function preload(){
 
   //Loading 16:9 Images
@@ -37,31 +105,6 @@ function setup() {
   background(value2, value2, value2);
 
   frameRate(15);
-
-
-  //Button To Reset
-  button = createButton('//RESET');
-  button.position(width/2, height-80);
-  button.mouseClicked(resizety);
-  button.addClass('button');
-
-  //Button To Screen The Canvas (Without HTML Eelements)
-  button = createButton('//SCREEN');
-  button.position(width/2-7, 140);
-  button.mouseClicked(savability);
-  button.addClass('button1');
-
-  //Button To The Dark Mode
-  button = createButton('//LUX');
-  button.position(width-100, 85);
-  button.mousePressed(darkmodety);
-  button.addClass('button2');
-
-  //Button To Wash
-  button = createButton(' //WASH');
-  button.position(width/2, height-150);
-  button.mousePressed(washability);
-  button.addClass('button3');
 
   //Instructions Of Use For The User
   fill('red');
@@ -151,153 +194,19 @@ pop();
 
 function draw() {
 //Nothing Here
-}
 
-//Resize Button Function
-function resizety() {
-  document.location.reload();
-  return false;
-}
+//Clickable LUX
+myButton.draw();
 
-//Save Screen
-function savability() {
-  saveCanvas('FC169_screen_thank_you', 'png');
-  return false;
-}
+//Clickable Screen
+screenButton.draw();
 
+//Clickable wash
+washButton.draw();
 
-//Dark Mode
-function darkmodety() {
-  if (value1 === 0) {
-    value1 = 255;
-  } else {
-    value1 = 0;
-  }
+//Clickable wash
+resetButton.draw();
 
-  if (value2 === 255) {
-    value2 = 0;
-    //Change Background Color
-    background(value2, value2, value2);
-
-    //Scripts Down The Second Line Negative
-    push();
-    fill(value1, value1, value1);
-    strokeWeight(0);
-    textFont(myFont);
-    textSize(15);
-    text("More info on:",10,height-82);
-    text("Photo n°: ",width-84,height-82);
-    pop();
-
-    //Internal Type Frame
-    push();
-    textSize(15);
-    textLeading(15);
-    fill(value1, value1, value1);
-    text("Communication Design",10,150);
-    text("16:9 photos resizer:",width-330,150);
-    text("Graduated from Politecnico di Milano",10,height-108);
-    text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
-    pop();
-
-     //Title Negative
-     push();
-     textSize(48);
-     noFill();
-     stroke(value1, value1, value1);
-     strokeWeight(0.7);
-     textLeading(60);
-     text("\nNOT A SLIDESHOW",70,60);
-     fill(value1, value1, value1);
-     text("FEDERICO CORDELLI",70,73);
-     strokeWeight(1);
-     line(0,130,windowWidth,130);
-     line(0,height-100,windowWidth,height-100);
-     pop();
-
-     //Upside Type Frame Negative
-     push();
-     fill(value1, value1, value1);
-     textSize(10);
-     text("Class 1998", 10, 15);
-     textAlign(CENTER);
-     text("Horror Vacui", width/2, 15);
-     textAlign(RIGHT);
-     text("From Italy", width-10, 15);
-     pop();
-
-     //Downside Type Frame
-     push();
-     fill(value1, value1, value1);
-     textSize(10);
-     text("16:9", 10, height-10);
-     textAlign(CENTER);
-     text("2:3", width/2, height-10);
-     textAlign(RIGHT);
-     text("This one-page site is designed & developed by me", width-10, height-10);
-     pop();
-  } else {
-    value2 = 255;
-    //Change the Background Color
-    background(value2, value2, value2);
-    //Scripts Down The Second Line Positive
-    push();
-    fill(value1, value1, value1);
-    strokeWeight(0);
-    textFont(myFont);
-    textSize(15);
-    text("More info on:",10,height-82);
-    text("Photo n°: ",width-84,height-82);
-    pop();
-
-    //Internal Type Frame Positive
-    push();
-    textSize(15);
-    textLeading(15);
-    fill(value1, value1, value1);
-    text("Communication Design",10,150);
-    text("16:9 photos resizer:",width-330,150);
-    text("Graduated from Politecnico di Milano",10,height-108);
-    text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
-    pop();
-
-     //Title Positive
-     push();
-     textSize(48);
-     noFill();
-     stroke(value1, value1, value1);
-     strokeWeight(0.7);
-     textLeading(60);
-     text("\nNOT A SLIDESHOW",70,60);
-     fill(value1, value1, value1);
-     text("FEDERICO CORDELLI",70,73);
-     strokeWeight(1);
-     line(0,130,windowWidth,130);
-     line(0,height-100,windowWidth,height-100);
-     pop();
-
-     //Upside Type Frame Positive
-     push();
-     fill(value1, value1, value1);
-     textSize(10);
-     text("Class 1998", 10, 15);
-     textAlign(CENTER);
-     text("Horror Vacui", width/2, 15);
-     textAlign(RIGHT);
-     text("From Italy", width-10, 15);
-     pop();
-
-     //Downside Type Frame
-     push();
-     fill(value1, value1, value1);
-     textSize(10);
-     text("16:9", 10, height-10);
-     textAlign(CENTER);
-     text("2:3", width/2, height-10);
-     textAlign(RIGHT);
-     text("This one-page site is designed & developed by me", width-10, height-10);
-     pop();
-  }
 }
 
 //Click Function
@@ -445,8 +354,147 @@ function windowResized() {
 
 }
 
-//Wash Screen
-function washability() {
+//Clickable LUX function
+myButton.onPress = function(){
+  if (value1 === 0) {
+    value1 = 255;
+  } else {
+    value1 = 0;
+  }
+
+  if (value2 === 255) {
+    value2 = 0;
+    //Change Background Color
+    background(value2, value2, value2);
+
+    //Scripts Down The Second Line Negative
+    push();
+    fill(value1, value1, value1);
+    strokeWeight(0);
+    textFont(myFont);
+    textSize(15);
+    text("More info on:",10,height-82);
+    text("Photo n°: ",width-84,height-82);
+    pop();
+
+    //Internal Type Frame
+    push();
+    textSize(15);
+    textLeading(15);
+    fill(value1, value1, value1);
+    text("Communication Design",10,150);
+    text("16:9 photos resizer:",width-330,150);
+    text("Graduated from Politecnico di Milano",10,height-108);
+    text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
+    pop();
+
+     //Title Negative
+     push();
+     textSize(48);
+     noFill();
+     stroke(value1, value1, value1);
+     strokeWeight(0.7);
+     textLeading(60);
+     text("\nNOT A SLIDESHOW",70,60);
+     fill(value1, value1, value1);
+     text("FEDERICO CORDELLI",70,73);
+     strokeWeight(1);
+     line(0,130,windowWidth,130);
+     line(0,height-100,windowWidth,height-100);
+     pop();
+
+     //Upside Type Frame Negative
+     push();
+     fill(value1, value1, value1);
+     textSize(10);
+     text("Class 1998", 10, 15);
+     textAlign(CENTER);
+     text("Horror Vacui", width/2, 15);
+     textAlign(RIGHT);
+     text("From Italy", width-10, 15);
+     pop();
+
+     //Downside Type Frame
+     push();
+     fill(value1, value1, value1);
+     textSize(10);
+     text("16:9", 10, height-10);
+     textAlign(CENTER);
+     text("2:3", width/2, height-10);
+     textAlign(RIGHT);
+     text("This one-page site is designed & developed by me", width-10, height-10);
+     pop();
+  } else {
+    value2 = 255;
+    //Change the Background Color
+    background(value2, value2, value2);
+    //Scripts Down The Second Line Positive
+    push();
+    fill(value1, value1, value1);
+    strokeWeight(0);
+    textFont(myFont);
+    textSize(15);
+    text("More info on:",10,height-82);
+    text("Photo n°: ",width-84,height-82);
+    pop();
+
+    //Internal Type Frame Positive
+    push();
+    textSize(15);
+    textLeading(15);
+    fill(value1, value1, value1);
+    text("Communication Design",10,150);
+    text("16:9 photos resizer:",width-330,150);
+    text("Graduated from Politecnico di Milano",10,height-108);
+    text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
+    pop();
+
+     //Title Positive
+     push();
+     textSize(48);
+     noFill();
+     stroke(value1, value1, value1);
+     strokeWeight(0.7);
+     textLeading(60);
+     text("\nNOT A SLIDESHOW",70,60);
+     fill(value1, value1, value1);
+     text("FEDERICO CORDELLI",70,73);
+     strokeWeight(1);
+     line(0,130,windowWidth,130);
+     line(0,height-100,windowWidth,height-100);
+     pop();
+
+     //Upside Type Frame Positive
+     push();
+     fill(value1, value1, value1);
+     textSize(10);
+     text("Class 1998", 10, 15);
+     textAlign(CENTER);
+     text("Horror Vacui", width/2, 15);
+     textAlign(RIGHT);
+     text("From Italy", width-10, 15);
+     pop();
+
+     //Downside Type Frame
+     push();
+     fill(value1, value1, value1);
+     textSize(10);
+     text("16:9", 10, height-10);
+     textAlign(CENTER);
+     text("2:3", width/2, height-10);
+     textAlign(RIGHT);
+     text("This one-page site is designed & developed by me", width-10, height-10);
+     pop();
+  }
+}
+
+//clickable screen function
+screenButton.onPress = function(){
+  saveCanvas('FC169_screen_thank_you', 'png');
+  return false;
+}
+//clickable wash function
+washButton.onPress = function(){
   background(value2, value2, value2);
 
   //Scripts Down The Second Line Negative
@@ -506,4 +554,10 @@ function washability() {
    textAlign(RIGHT);
    text("This one-page site is designed & developed by me", width-10, height-10);
    pop();
+}
+
+//clickable reset function
+resetButton.onPress = function(){
+  document.location.reload();
+  return false;
 }

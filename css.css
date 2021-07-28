@@ -107,8 +107,8 @@ css document
 
 .button2 {
   background-color: #000000; /* Green */
-  border: 1px solid #ffffff;
-  color: white;
+  border: 1px solid #ff0000;
+  color: red;
   padding: 10px 15px;
   text-align: center;
   text-decoration: none;
@@ -118,7 +118,7 @@ css document
 }
 
 .button2:hover {
-  background-color: #ffffff; /* Green */
+  background-color: #ff0000; /* Green */
   border: 1px solid #000000;
   color: black;
   padding: 10px 15px;
@@ -131,8 +131,8 @@ css document
 
 .button2:active {
   background-color: #000000; /* Green */
-  border: 1px solid #ffffff;
-  color: white;
+  border: 1px solid #ff0000;
+  color: red;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
@@ -177,6 +177,113 @@ css document
   border-radius: 12px;
 }
 
+.button4 {
+  background-color: #000000; /* Green */
+  border: 1px solid #FFFFFF;
+  color: white;
+  padding: 3.7px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.button4:hover {
+  background-color: #ffffff; /* Green */
+  border: 1px solid #000000;
+  color: black;
+  padding: 3.7px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.button4:active {
+  background-color: #000000; /* Green */
+  border: 1px solid #ffffff;
+  color: white;
+  padding: 3.7px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.button5 {
+  background-color: #ffffff; /* Green */
+  border: 1px solid #000000;
+  color: black;
+  padding: 3.7px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.button5:hover {
+  background-color: #000000; /* Green */
+  border: 1px solid #ffffff;
+  color: white;
+  padding: 3.7px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.button5:active {
+  background-color: #ffffff; /* Green */
+  border: 1px solid #000000;
+  color: black;
+  padding: 3.7px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.button6 {
+  background-color: #000000; /* Green */
+  border: 1px solid #ffffff;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+.button6:hover {
+  background-color: #ffffff; /* Green */
+  border: 1px solid #000000;
+  color: black;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+.button6:active {
+  background-color: #000000; /* Green */
+  border: 1px solid #ffffff;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
 
 a:link {
   font-family:SuisseIntl-Medium;

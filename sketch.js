@@ -2,7 +2,7 @@
 
 //The Base Of All The Site
 var imagesOk = [];
-var j = 1;
+var j = 0;
 var imagesVert = [];
 
 //Slider
@@ -44,12 +44,20 @@ function setup() {
   button.position(width/2, height-80);
   button.mouseClicked(resizety);
   button.addClass('button');
+  button.center('horizontal');
 
   //Button To Screen The Canvas (Without HTML Eelements)
-  button = createButton('//SCREEN');
-  button.position(width/2-7, 140);
-  button.mouseClicked(savability);
-  button.addClass('button1');
+  buttonS = createButton('//SCREEN');
+  buttonS.position(width/2-7, 140);
+  buttonS.mouseClicked(savability);
+  buttonS.addClass('button1');
+  buttonS.center('horizontal');
+
+  //Button To Go One Click Back
+  buttonB = createButton('//←');
+  buttonB.position(width-125,height-71.1);
+  buttonB.mouseClicked(backyty);
+  buttonB.addClass('button4');
 
   //Button To The Dark Mode
   button = createButton('//LUX');
@@ -62,6 +70,7 @@ function setup() {
   button.position(width/2, height-150);
   button.mousePressed(washability);
   button.addClass('button3');
+  button.center('horizontal');
 
   //Instructions Of Use For The User
   fill('red');
@@ -151,6 +160,19 @@ pop();
 
 function draw() {
 //Nothing Here
+//Photo Number
+push();
+strokeWeight(1);
+stroke(value2,value2,value2);
+fill(value1, value1, value1);
+rect(width-65, height-70, 40, 30, 10, 10, 10, 10);
+pop();
+push();
+fill(value2, value2, value2);
+textSize(20);
+textStyle(NORMAL);
+text(j,width-50,height-48);
+pop();
 }
 
 //Resize Button Function
@@ -170,12 +192,18 @@ function savability() {
 function darkmodety() {
   if (value1 === 0) {
     value1 = 255;
+
   } else {
     value1 = 0;
   }
 
   if (value2 === 255) {
     value2 = 0;
+    //Inverting Buttons Colors
+    buttonB.removeClass('button4');
+    buttonB.addClass('button5');
+    buttonS.removeClass('button1');
+    buttonS.addClass('button6');
     //Change Background Color
     background(value2, value2, value2);
 
@@ -238,6 +266,11 @@ function darkmodety() {
      pop();
   } else {
     value2 = 255;
+    //Inverting Buttons Colors
+    buttonB.removeClass('button5');
+    buttonB.addClass('button4');
+    buttonS.removeClass('button6');
+    buttonS.addClass('button1');
     //Change the Background Color
     background(value2, value2, value2);
     //Scripts Down The Second Line Positive
@@ -300,26 +333,31 @@ function darkmodety() {
   }
 }
 
+// One Click Back Function
+function backyty(){
+  j=j-3;
+  if(j<0){
+    j=0;
+  }else if(j===0){
+    j=1;
+  }
+  //Images 2:3 When You Go Back To One Click
+  imageMode(CENTER);
+   image(imagesVert[j], windowWidth/2, windowHeight/2, 400, 600);
+   return false;
+}
+
 //Click Function
 function touchEnded() {
   //Change Images
-  if(j===20) {
-    j=1;
-  } else if(j<20) {
+  if(j<0){
+    j=0;
+  }
+  if(j<20) {
   j++;
+}else if(j===20) {
+      j=0;
     }
-
-    //Photo Number
-    push();
-    fill(value1, value1, value1);
-    rect(width-65, height-70, 40, 30, 10, 10, 10, 10);
-    pop();
-    push();
-    fill(value2, value2, value2);
-    textSize(20);
-    textStyle(NORMAL);
-    text(j-1,width-50,height-48);
-    pop();
 
     //Title
     push();
@@ -367,16 +405,16 @@ function touchEnded() {
 
 //Drag Function
 function touchMoved() {
-
   //Slider Value
   let valslider = slider.value();
 
   //Images 16:9
   imageMode(CENTER);
-   image(imagesOk[j], mouseX, mouseY, valslider, (valslider/16)*9);
+   image(imagesOk[j+1], mouseX, mouseY, valslider, (valslider/16)*9);
    return false;
 }
 
+//Resizing The Page
 function windowResized() {
 
   //Layout Resized

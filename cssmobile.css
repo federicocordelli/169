@@ -18,8 +18,8 @@ css document
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 13px; /* Set a specific slider handle width */
-  height: 13px; /* Slider handle height */
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
   border-radius: 50%;
   background: #ff0000; /* Green background */
   cursor: pointer; /* Cursor on hover */

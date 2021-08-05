@@ -2,7 +2,7 @@
 
 //The Base Of All The Site
 var imagesOk = [];
-var j = 1;
+var j = 0;
 var imagesVert = [];
 
 //Slider
@@ -88,7 +88,7 @@ backButton = new Clickable();
 
 //Clickable BACK Attributes
 backButton.color = "#000000";
-backButton.cornerRadius = 20;
+backButton.cornerRadius = 10;
 backButton.strokeWeight = 1;
 backButton.stroke = "#ffffff";
 backButton.text = "//←";
@@ -98,7 +98,8 @@ backButton.textFont = "SuisseIntl-Medium";
 backButton.textScaled = false;
 backButton.width = 100;
 backButton.height = 40;
-backButton.locate((width/2)-110, height-150);
+// backButton.locate(10, 700);
+
 
 function preload(){
 
@@ -137,8 +138,8 @@ function setup() {
 
     //Slider Images Resizer
     slider = createSlider(128, 512, 256);
-    slider.position(width-80, 393);
-    slider.style('width', '250px');
+    // slider.position(width-80, 393);
+    slider.style('width', '450px');
     slider.addClass('slider');
     slider.style("transform","rotate(-90deg)");
 
@@ -151,7 +152,7 @@ function setup() {
   textFont(myFont);
   textSize(15);
   text("More info on:",10,height-82);
-  text("Photo n°: ",width-84,height-82);
+  // text("Photo n°: ",width-84,height-82);
   pop();
 
   //link To Behance
@@ -202,7 +203,7 @@ fill(value1, value1, value1);
 textSize(15);
 textLeading(15);
 text("Communication Design",10,150);
-text("16:9 photos resizer:",width-330,150);
+text("16:9 photos resizer:",width-150,150);
 text("Graduated from Politecnico di Milano",10,height-108);
 text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
 pop();
@@ -225,47 +226,56 @@ washButton.draw();
 resetButton.draw();
 
 //Clickable back
+backButton.locate((width/2)-100, height-150);
 backButton.draw();
+// backButton.locate((width/2)-110, height-150);
+
+    slider.position((width/20)*15.3, 393);
 
 //Photo Number
 push();
 strokeWeight(1);
-stroke(value2,value2,value2);
-fill(value1, value1, value1);
-center(CENTER);
-rect((width/2)+110, height-150, 100, 40, 10, 10, 10, 10);
+stroke(255,255,255);
+fill(0, 0, 0);
+rect((width/2)+10, height-150, 100, 40, 10, 10, 10, 10);
 pop();
 push();
-fill(value2, value2, value2);
+fill(255, 255, 255);
 textAlign(CENTER,CENTER);
 textSize(25);
 textStyle(NORMAL);
-text(j,(width/2)+110, height-150);
+text(j,(width/2)+60, height-133);
 pop();
 
 }
 
+//clickable back function
+backButton.onPress = function(){
+  j=j-3;
+  if(j<0){
+    j=1;
+  }else if(j===0){
+    j=1;
+  }
+  //Images 2:3 When You Go Back To One Click
+  imageMode(CENTER);
+   image(imagesVert[j], windowWidth/2, windowHeight/2, 400, 600);
+   return false;
+}
+
+
 //Click Function
 function touchEnded() {
   //Change Images
-  if(j===20) {
+  if(j<0){
     j=1;
-  } else if(j<20) {
+  }
+  if(j<20) {
   j++;
+}else if(j===20) {
+      j=1;
     }
-/*
-    //Photo Number
-    push();
-    fill(value1, value1, value1);
-    rect(width-65, height-70, 40, 30, 10, 10, 10, 10);
-    pop();
-    push();
-    fill(value2, value2, value2);
-    textSize(20);
-    textStyle(NORMAL);
-    text(j-1,width-50,height-48);
-    pop();
-*/
+
     //Title
     push();
     textSize(48);
@@ -318,7 +328,7 @@ function touchMoved() {
 
   //Images 16:9
   imageMode(CENTER);
-   image(imagesOk[j], mouseX, mouseY, valslider, (valslider/16)*9);
+   image(imagesOk[j+1], mouseX, mouseY, valslider, (valslider/16)*9);
    return false;
 }
 
@@ -337,7 +347,7 @@ function windowResized() {
   textFont(myFont);
   textSize(15);
   text("More info on:",10,height-82);
-  text("Photo n°: ",width-84,height-82);
+  // text("Photo n°: ",width-84,height-82);
   pop();
 
   //Internal Type Frame
@@ -346,7 +356,7 @@ function windowResized() {
   textLeading(15);
   fill(value1, value1, value1);
   text("Communication Design",10,150);
-  text("16:9 photos resizer:",width-330,150);
+  text("16:9 photos resizer:",width-150,150);
   text("Graduated from Politecnico di Milano",10,height-108);
   text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
   pop();
@@ -410,7 +420,7 @@ myButton.onPress = function(){
     textFont(myFont);
     textSize(15);
     text("More info on:",10,height-82);
-    text("Photo n°: ",width-84,height-82);
+    // text("Photo n°: ",width-84,height-82);
     pop();
 
     //Internal Type Frame
@@ -419,7 +429,7 @@ myButton.onPress = function(){
     textLeading(15);
     fill(value1, value1, value1);
     text("Communication Design",10,150);
-    text("16:9 photos resizer:",width-330,150);
+    text("16:9 photos resizer:",width-150,150);
     text("Graduated from Politecnico di Milano",10,height-108);
     text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
     pop();
@@ -471,7 +481,7 @@ myButton.onPress = function(){
     textFont(myFont);
     textSize(15);
     text("More info on:",10,height-82);
-    text("Photo n°: ",width-84,height-82);
+    // text("Photo n°: ",width-84,height-82);
     pop();
 
     //Internal Type Frame Positive
@@ -480,7 +490,7 @@ myButton.onPress = function(){
     textLeading(15);
     fill(value1, value1, value1);
     text("Communication Design",10,150);
-    text("16:9 photos resizer:",width-330,150);
+    text("16:9 photos resizer:",width-150,150);
     text("Graduated from Politecnico di Milano",10,height-108);
     text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
     pop();
@@ -530,20 +540,6 @@ screenButton.onPress = function(){
   return false;
 }
 
-//clickable back function
-backButton.onPress = function(){
-  j=j-3;
-  if(j<0){
-    j=0;
-  }else if(j===0){
-    j=1;
-  }
-  //Images 2:3 When You Go Back To One Click
-  imageMode(CENTER);
-   image(imagesVert[j], windowWidth/2, windowHeight/2, 400, 600);
-   return false;
-}
-
 //clickable wash function
 washButton.onPress = function(){
   background(value2, value2, value2);
@@ -555,7 +551,7 @@ washButton.onPress = function(){
   textFont(myFont);
   textSize(15);
   text("More info on:",10,height-82);
-  text("Photo n°: ",width-84,height-82);
+  // text("Photo n°: ",width-84,height-82);
   pop();
 
   //Internal Type Frame
@@ -564,7 +560,7 @@ washButton.onPress = function(){
   textLeading(15);
   fill(value1, value1, value1);
   text("Communication Design",10,150);
-  text("16:9 photos resizer:",width-330,150);
+  text("16:9 photos resizer:",width-150,150);
   text("Graduated from Politecnico di Milano",10,height-108);
   text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
   pop();

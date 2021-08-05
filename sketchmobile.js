@@ -228,9 +228,9 @@ resetButton.draw();
 //Clickable back
 backButton.locate((width/2)-100, height-150);
 backButton.draw();
-// backButton.locate((width/2)-110, height-150);
 
-    slider.position((width/20)*15.3, 393);
+// slider position
+slider.position((width/20)*14, 393);
 
 //Photo Number
 push();

@@ -22,9 +22,9 @@ myButton = new Clickable();
 myButton.color = "#000000";
 myButton.cornerRadius = 20;
 myButton.strokeWeight = 1;
-myButton.stroke = "#ffffff";
+myButton.stroke = "#ff0000";
 myButton.text = "//LUX";
-myButton.textColor = "#ffffff";
+myButton.textColor = "#ff0000";
 myButton.textSize = 25;
 myButton.textFont = "SuisseIntl-Medium";
 myButton.textScaled = false;
@@ -83,6 +83,23 @@ resetButton.width = 200;
 resetButton.height = 80;
 resetButton.locate(10, 600);
 
+//Clickable BACK
+backButton = new Clickable();
+
+//Clickable BACK Attributes
+backButton.color = "#000000";
+backButton.cornerRadius = 20;
+backButton.strokeWeight = 1;
+backButton.stroke = "#ffffff";
+backButton.text = "//←";
+backButton.textColor = "#ffffff";
+backButton.textSize = 25;
+backButton.textFont = "SuisseIntl-Medium";
+backButton.textScaled = false;
+backButton.width = 100;
+backButton.height = 40;
+backButton.locate((width/2)-110, height-150);
+
 function preload(){
 
   //Loading 16:9 Images
@@ -120,9 +137,10 @@ function setup() {
 
     //Slider Images Resizer
     slider = createSlider(128, 512, 256);
-    slider.position(width-180, 143);
-    slider.style('width', '150px');
+    slider.position(width-80, 393);
+    slider.style('width', '250px');
     slider.addClass('slider');
+    slider.style("transform","rotate(-90deg)");
 
 
 
@@ -193,7 +211,6 @@ pop();
 
 
 function draw() {
-//Nothing Here
 
 //Clickable LUX
 myButton.draw();
@@ -207,6 +224,25 @@ washButton.draw();
 //Clickable wash
 resetButton.draw();
 
+//Clickable back
+backButton.draw();
+
+//Photo Number
+push();
+strokeWeight(1);
+stroke(value2,value2,value2);
+fill(value1, value1, value1);
+center(CENTER);
+rect((width/2)+110, height-150, 100, 40, 10, 10, 10, 10);
+pop();
+push();
+fill(value2, value2, value2);
+textAlign(CENTER,CENTER);
+textSize(25);
+textStyle(NORMAL);
+text(j,(width/2)+110, height-150);
+pop();
+
 }
 
 //Click Function
@@ -217,7 +253,7 @@ function touchEnded() {
   } else if(j<20) {
   j++;
     }
-
+/*
     //Photo Number
     push();
     fill(value1, value1, value1);
@@ -229,7 +265,7 @@ function touchEnded() {
     textStyle(NORMAL);
     text(j-1,width-50,height-48);
     pop();
-
+*/
     //Title
     push();
     textSize(48);
@@ -493,6 +529,21 @@ screenButton.onPress = function(){
   saveCanvas('FC169_screen_thank_you', 'png');
   return false;
 }
+
+//clickable back function
+backButton.onPress = function(){
+  j=j-3;
+  if(j<0){
+    j=0;
+  }else if(j===0){
+    j=1;
+  }
+  //Images 2:3 When You Go Back To One Click
+  imageMode(CENTER);
+   image(imagesVert[j], windowWidth/2, windowHeight/2, 400, 600);
+   return false;
+}
+
 //clickable wash function
 washButton.onPress = function(){
   background(value2, value2, value2);

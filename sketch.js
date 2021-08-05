@@ -159,7 +159,6 @@ pop();
 
 
 function draw() {
-//Nothing Here
 //Photo Number
 push();
 strokeWeight(1);

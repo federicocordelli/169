@@ -40,11 +40,11 @@ function setup() {
 
 
   //Button To Reset
-  button = createButton('//RESET');
-  button.position(width/2, height-80);
-  button.mouseClicked(resizety);
-  button.addClass('button');
-  button.center('horizontal');
+  buttonR = createButton('//RESET');
+  buttonR.position(width/2, height-80);
+  buttonR.mouseClicked(resizety);
+  buttonR.addClass('button');
+  buttonR.center('horizontal');
 
   //Button To Screen The Canvas (Without HTML Eelements)
   buttonS = createButton('//SCREEN');
@@ -60,10 +60,10 @@ function setup() {
   buttonB.addClass('button4');
 
   //Button To The Dark Mode
-  button = createButton('//LUX');
-  button.position(width-100, 85);
-  button.mousePressed(darkmodety);
-  button.addClass('button2');
+  buttonL = createButton('//LUX');
+  buttonL.position(width-100, 85);
+  buttonL.mousePressed(darkmodety);
+  buttonL.addClass('button2');
 
   //Button To Wash
   button = createButton(' //WASH');
@@ -402,6 +402,13 @@ function touchEnded() {
 
 }
 
+//Fullscreen Function
+function touchStarted() {
+  let fs = fullscreen();
+ fullscreen(!fs--);
+}
+
+
 //Drag Function
 function touchMoved() {
   //Slider Value
@@ -415,10 +422,20 @@ function touchMoved() {
 
 //Resizing The Page
 function windowResized() {
-
   //Layout Resized
   resizeCanvas(windowWidth,windowHeight);
   background(value2, value2, value2);
+
+  buttonR.position(width/2, height-80);
+  buttonR.center('horizontal');
+  buttonB.position(width-125,height-71.1);
+  button.position(width/2, height-150);
+  button.center('horizontal');
+  buttonS.position(width/2-7, 140);
+  buttonS.center('horizontal');
+  buttonL.position(width-100, 85);
+  slider.position(width-180, 143);
+  link.position(108, height-96);
 
   frameRate(15);
 

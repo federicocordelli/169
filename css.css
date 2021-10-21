@@ -288,19 +288,19 @@ css document
 a:link {
   font-family:SuisseIntl-Medium;
   font-size: 15px;
-  color: black;
+  color: red;
 }
 
 a:visited {
   font-family:SuisseIntl-Medium;
   font-size: 15px;
-  color: black;
+  color: red;
 }
 
 a:hover {
   font-family:SuisseIntl-Medium;
   font-size: 16px;
-  color: red;
+  color: grey;
 }
 
 a:active {

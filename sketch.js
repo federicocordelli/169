@@ -7,6 +7,7 @@ var imagesVert = [];
 
 //Slider
 let slider;
+var valslider;
 
 //Font
 let myFont;
@@ -16,7 +17,6 @@ let value1 = 0;
 let value2 = 255;
 
 function preload(){
-
   //Loading 16:9 Images
   for (var i=1; i<21; i++) {
     imagesOk[i] = loadImage("addons/"+i+".jpg");
@@ -37,7 +37,6 @@ function setup() {
   background(value2, value2, value2);
 
   frameRate(15);
-
 
   //Button To Reset
   buttonR = createButton('//RESET');
@@ -89,8 +88,6 @@ function setup() {
     slider.position(width-180, 143);
     slider.style('width', '150px');
     slider.addClass('slider');
-
-
 
   //Scripts Down The Second Line
   push();
@@ -154,7 +151,6 @@ text("16:9 photos resizer:",width-330,150);
 text("Graduated from Politecnico di Milano",10,height-108);
 text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
 pop();
-
 }
 
 
@@ -169,8 +165,9 @@ pop();
 push();
 fill(value2, value2, value2);
 textSize(20);
+textAlign(CENTER);
 textStyle(NORMAL);
-text(j,width-50,height-48);
+text(j,width-45,height-48);
 pop();
 }
 
@@ -408,11 +405,10 @@ function touchStarted() {
  fullscreen(!fs--);
 }
 
-
 //Drag Function
 function touchMoved() {
   //Slider Value
-  let valslider = slider.value();
+  valslider = slider.value();
 
   //Images 16:9
   imageMode(CENTER);

@@ -309,3 +309,30 @@ a:active {
   font-size: 15px;
   color: pink;
 }
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  font-family:SuisseIntl-Medium;
+  font-size: 15px;
+  color: red;
+  cursor: pointer;
+}
+
+/*
+.container:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+container input:checked {
+  background-color: #FF0000;
+}
+*/

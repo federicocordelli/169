@@ -6,8 +6,11 @@ var j = 0;
 var imagesVert = [];
 
 //Slider
-let slider;
-var valslider;
+// let slider;
+// var valslider;
+
+//Radio
+let radio;
 
 //Font
 let myFont;
@@ -37,6 +40,19 @@ function setup() {
   background(value2, value2, value2);
 
   frameRate(15);
+
+  //Radio Trial
+push();
+  radio = createRadio();
+  radio.option('min',0.5);
+  radio.option('normal',1);
+  radio.option('max',2);
+  radio.style('width', '1000px');
+  radio.position(width-180, 135);
+  radio.addClass('container');
+  textAlign(CENTER);
+  fill(255, 0, 0);
+  pop();
 
   //Button To Reset
   buttonR = createButton('//RESET');
@@ -84,10 +100,10 @@ function setup() {
 
 
     //Slider Images Resizer
-    slider = createSlider(128, 512, 256);
-    slider.position(width-180, 143);
-    slider.style('width', '150px');
-    slider.addClass('slider');
+    // slider = createSlider(128, 512, 256);
+    // slider.position(width-180, 143);
+    // slider.style('width', '150px');
+    // slider.addClass('slider');
 
   //Scripts Down The Second Line
   push();
@@ -408,12 +424,18 @@ function touchStarted() {
 //Drag Function
 function touchMoved() {
   //Slider Value
-  valslider = slider.value();
+  // valslider = slider.value();
+  //Radio Value
+  let val1 = radio.value();
 
   //Images 16:9
-  imageMode(CENTER);
-   image(imagesOk[j+1], mouseX, mouseY, valslider, (valslider/16)*9);
-   return false;
+  // imageMode(CENTER);
+  //  image(imagesOk[j+1], mouseX, mouseY, valslider, (valslider/16)*9);
+  //  return false;
+
+   imageMode(CENTER);
+    image(imagesOk[j+1], mouseX, mouseY, 256*val1,144*val1);
+    return false;
 }
 
 //Resizing The Page
@@ -430,8 +452,9 @@ function windowResized() {
   buttonS.position(width/2-7, 140);
   buttonS.center('horizontal');
   buttonL.position(width-100, 85);
-  slider.position(width-180, 143);
+  // slider.position(width-180, 143);
   link.position(108, height-96);
+  radio.position(width-180, 135);
 
   frameRate(15);
 

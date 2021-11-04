@@ -7,6 +7,8 @@ var imagesVert = [];
 
 //Slider
 let slider;
+//Radio
+let radio;
 
 //Font
 let myFont;
@@ -124,6 +126,19 @@ function setup() {
 
   frameRate(15);
 
+  //Radio Button for Resizing Imges
+push();
+  radio = createRadio();
+  radio.option('min',0.5);
+  radio.option('med',1);
+  radio.option('max',2);
+  radio.style('width', '73.4px');
+  radio.position(width-100, 300);
+  radio.addClass('container1');
+  textAlign(CENTER);
+  fill(255, 0, 0);
+  pop();
+
   //Instructions Of Use For The User
   fill('red');
   textFont(myFont);
@@ -135,14 +150,14 @@ function setup() {
   textSize(15);
   text("*Things you can find here & rules:*",windowWidth/2 - 193,windowHeight/2 - 80);
 
-
+/*
     //Slider Images Resizer
     slider = createSlider(128, 512, 256);
     // slider.position(width-80, 393);
     slider.style('width', '450px');
     slider.addClass('slider');
     slider.style("transform","rotate(-90deg)");
-
+*/
 
 
   //Scripts Down The Second Line
@@ -150,35 +165,34 @@ function setup() {
   fill(value1, value1, value1);
   strokeWeight(0);
   textFont(myFont);
-  textSize(15);
-  text("More info on:",10,height-82);
-  // text("Photo n°: ",width-84,height-82);
+  textSize(20);
+  text("More info on:",40,height-74);
   pop();
 
   //link To Behance
   link = createA("https://www.behance.net/Federico_cordelli?isa0=1","behance", "_blank");
-   link.position(108, height-96);
+   link.position(170, height-96);
    link.addClass('a');
 
 //Title
 push();
-textSize(48);
+textSize(85);
 noFill();
 stroke(value1, value1, value1);
-strokeWeight(0.7);
-textLeading(60);
-text("\nNOT A SLIDESHOW",70,60);
+strokeWeight(0.9);
+textLeading(93);
+text("\nNOT A SLIDESHOW",40,100);
 fill(value1, value1, value1);
-text("FEDERICO CORDELLI",70,73);
+text("FEDERICO CORDELLI",40,113);
 strokeWeight(1);
-line(0,130,windowWidth,130);
+line(0,210,windowWidth,210);
 line(0,height-100,windowWidth,height-100);
 pop();
 
 //Upside Type Frame
 push();
 fill(value1, value1, value1);
-textSize(10);
+textSize(15);
 text("Class 1998", 10, 15);
 textAlign(CENTER);
 text("Horror Vacui", width/2, 15);
@@ -189,23 +203,26 @@ pop();
 //Downside Type Frame
 push();
 fill(value1, value1, value1);
-textSize(10);
+textSize(15);
 text("16:9", 10, height-10);
 textAlign(CENTER);
-text("2:3", width/2, height-10);
+text("This one-page site is designed & developed by me", width/2, height-10);
 textAlign(RIGHT);
-text("This one-page site is designed & developed by me", width-10, height-10);
+text("2:3", width-10, height-10);
 pop();
 
 //Internal Type Frame
 push();
 fill(value1, value1, value1);
-textSize(15);
+textSize(20);
 textLeading(15);
-text("Communication Design",10,150);
-text("16:9 photos resizer:",width-150,150);
+text("Communication Design",10,240);
+textAlign(RIGHT);
+text("16:9 photos resizer:",width-10,240);
+textAlign(LEFT);
 text("Graduated from Politecnico di Milano",10,height-108);
-text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
+textAlign(RIGHT);
+text("To contact me: cordelli.federico@gmail.com",width-10,height-108);
 pop();
 
 }
@@ -226,25 +243,26 @@ washButton.draw();
 resetButton.draw();
 
 //Clickable back
-backButton.locate((width/2)-100, height-150);
+backButton.locate((width/2)-100, height-200);
 backButton.draw();
 
+/*
 // slider position
 slider.position((width/20)*14, 393);
-
+*/
 //Photo Number
 push();
 strokeWeight(1);
 stroke(255,255,255);
 fill(0, 0, 0);
-rect((width/2)+10, height-150, 100, 40, 10, 10, 10, 10);
+rect((width/2)+10, height-200, 100, 40, 10, 10, 10, 10);
 pop();
 push();
 fill(255, 255, 255);
 textAlign(CENTER,CENTER);
 textSize(25);
 textStyle(NORMAL);
-text(j,(width/2)+60, height-133);
+text(j,(width/2)+60, height-183);
 pop();
 
 }
@@ -278,23 +296,23 @@ function touchEnded() {
 
     //Title
     push();
-    textSize(48);
+    textSize(85);
     noFill();
     stroke(value1, value1, value1);
-    strokeWeight(0.7);
-    textLeading(60);
-    text("\nNOT A SLIDESHOW",70,60);
+    strokeWeight(0.9);
+    textLeading(93);
+    text("\nNOT A SLIDESHOW",40,100);
     fill(value1, value1, value1);
-    text("FEDERICO CORDELLI",70,73);
+    text("FEDERICO CORDELLI",40,113);
     strokeWeight(1);
-    line(0,130,windowWidth,130);
+    line(0,210,windowWidth,210);
     line(0,height-100,windowWidth,height-100);
     pop();
 
     //Upside Type Frame
     push();
     fill(value1, value1, value1);
-    textSize(10);
+    textSize(15);
     text("Class 1998", 10, 15);
     textAlign(CENTER);
     text("Horror Vacui", width/2, 15);
@@ -305,12 +323,12 @@ function touchEnded() {
     //Downside Type Frame
     push();
     fill(value1, value1, value1);
-    textSize(10);
+    textSize(15);
     text("16:9", 10, height-10);
     textAlign(CENTER);
-    text("2:3", width/2, height-10);
+    text("This one-page site is designed & developed by me", width/2, height-10);
     textAlign(RIGHT);
-    text("This one-page site is designed & developed by me", width-10, height-10);
+    text("2:3", width-10, height-10);
     pop();
 
     //Images 2:3
@@ -322,7 +340,7 @@ function touchEnded() {
 
 //Drag Function
 function touchMoved() {
-
+/*
   //Slider Value
   let valslider = slider.value();
 
@@ -330,6 +348,14 @@ function touchMoved() {
   imageMode(CENTER);
    image(imagesOk[j+1], mouseX, mouseY, valslider, (valslider/16)*9);
    return false;
+   */
+
+     //Radio Value
+     let val1 = radio.value();
+
+      imageMode(CENTER);
+       image(imagesOk[j+1], mouseX, mouseY, 256*val1,144*val1);
+       return false;
 }
 
 function windowResized() {
@@ -337,6 +363,8 @@ function windowResized() {
   //Layout Resized
   resizeCanvas(windowWidth,windowHeight);
   background(value2, value2, value2);
+  link.position(170, height-96);
+  radio.position(width-100, 300);
 
   frameRate(15);
 
@@ -345,41 +373,43 @@ function windowResized() {
   fill(value1, value1, value1);
   strokeWeight(0);
   textFont(myFont);
-  textSize(15);
-  text("More info on:",10,height-82);
-  // text("Photo n°: ",width-84,height-82);
+  textSize(20);
+  text("More info on:",40,height-74);
   pop();
 
   //Internal Type Frame
   push();
-  textSize(15);
-  textLeading(15);
   fill(value1, value1, value1);
-  text("Communication Design",10,150);
-  text("16:9 photos resizer:",width-150,150);
+  textSize(20);
+  textLeading(15);
+  text("Communication Design",10,240);
+  textAlign(RIGHT);
+  text("16:9 photos resizer:",width-10,240);
+  textAlign(LEFT);
   text("Graduated from Politecnico di Milano",10,height-108);
-  text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
+  textAlign(RIGHT);
+  text("To contact me: cordelli.federico@gmail.com",width-10,height-108);
   pop();
 
-   //Title
-   push();
-   textSize(48);
-   noFill();
-   stroke(value1, value1, value1);
-   strokeWeight(0.7);
-   textLeading(60);
-   text("\nNOT A SLIDESHOW",70,60);
-   fill(value1, value1, value1);
-   text("FEDERICO CORDELLI",70,73);
-   strokeWeight(1);
-   line(0,130,windowWidth,130);
-   line(0,height-100,windowWidth,height-100);
-   pop();
+  //Title
+  push();
+  textSize(85);
+  noFill();
+  stroke(value1, value1, value1);
+  strokeWeight(0.9);
+  textLeading(93);
+  text("\nNOT A SLIDESHOW",40,100);
+  fill(value1, value1, value1);
+  text("FEDERICO CORDELLI",40,113);
+  strokeWeight(1);
+  line(0,210,windowWidth,210);
+  line(0,height-100,windowWidth,height-100);
+  pop();
 
    //Upside Type Frame
    push();
    fill(value1, value1, value1);
-   textSize(10);
+   textSize(15);
    text("Class 1998", 10, 15);
    textAlign(CENTER);
    text("Horror Vacui", width/2, 15);
@@ -390,12 +420,12 @@ function windowResized() {
    //Downside Type Frame
    push();
    fill(value1, value1, value1);
-   textSize(10);
+   textSize(15);
    text("16:9", 10, height-10);
    textAlign(CENTER);
-   text("2:3", width/2, height-10);
+   text("This one-page site is designed & developed by me", width/2, height-10);
    textAlign(RIGHT);
-   text("This one-page site is designed & developed by me", width-10, height-10);
+   text("2:3", width-10, height-10);
    pop();
 
 }
@@ -418,41 +448,43 @@ myButton.onPress = function(){
     fill(value1, value1, value1);
     strokeWeight(0);
     textFont(myFont);
-    textSize(15);
-    text("More info on:",10,height-82);
-    // text("Photo n°: ",width-84,height-82);
+    textSize(20);
+    text("More info on:",40,height-74);
     pop();
 
     //Internal Type Frame
     push();
-    textSize(15);
-    textLeading(15);
     fill(value1, value1, value1);
-    text("Communication Design",10,150);
-    text("16:9 photos resizer:",width-150,150);
+    textSize(20);
+    textLeading(15);
+    text("Communication Design",10,240);
+    textAlign(RIGHT);
+    text("16:9 photos resizer:",width-10,240);
+    textAlign(LEFT);
     text("Graduated from Politecnico di Milano",10,height-108);
-    text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
+    textAlign(RIGHT);
+    text("To contact me: cordelli.federico@gmail.com",width-10,height-108);
     pop();
 
-     //Title Negative
-     push();
-     textSize(48);
-     noFill();
-     stroke(value1, value1, value1);
-     strokeWeight(0.7);
-     textLeading(60);
-     text("\nNOT A SLIDESHOW",70,60);
-     fill(value1, value1, value1);
-     text("FEDERICO CORDELLI",70,73);
-     strokeWeight(1);
-     line(0,130,windowWidth,130);
-     line(0,height-100,windowWidth,height-100);
-     pop();
+    //Title Negative
+    push();
+    textSize(85);
+    noFill();
+    stroke(value1, value1, value1);
+    strokeWeight(0.9);
+    textLeading(93);
+    text("\nNOT A SLIDESHOW",40,100);
+    fill(value1, value1, value1);
+    text("FEDERICO CORDELLI",40,113);
+    strokeWeight(1);
+    line(0,210,windowWidth,210);
+    line(0,height-100,windowWidth,height-100);
+    pop();
 
      //Upside Type Frame Negative
      push();
      fill(value1, value1, value1);
-     textSize(10);
+     textSize(15);
      text("Class 1998", 10, 15);
      textAlign(CENTER);
      text("Horror Vacui", width/2, 15);
@@ -463,12 +495,12 @@ myButton.onPress = function(){
      //Downside Type Frame
      push();
      fill(value1, value1, value1);
-     textSize(10);
+     textSize(15);
      text("16:9", 10, height-10);
      textAlign(CENTER);
-     text("2:3", width/2, height-10);
+     text("This one-page site is designed & developed by me", width/2, height-10);
      textAlign(RIGHT);
-     text("This one-page site is designed & developed by me", width-10, height-10);
+     text("2:3", width-10, height-10);
      pop();
   } else {
     value2 = 255;
@@ -476,44 +508,47 @@ myButton.onPress = function(){
     background(value2, value2, value2);
     //Scripts Down The Second Line Positive
     push();
+    push();
     fill(value1, value1, value1);
     strokeWeight(0);
     textFont(myFont);
-    textSize(15);
-    text("More info on:",10,height-82);
-    // text("Photo n°: ",width-84,height-82);
+    textSize(20);
+    text("More info on:",40,height-74);
     pop();
 
     //Internal Type Frame Positive
     push();
-    textSize(15);
-    textLeading(15);
     fill(value1, value1, value1);
-    text("Communication Design",10,150);
-    text("16:9 photos resizer:",width-150,150);
+    textSize(20);
+    textLeading(15);
+    text("Communication Design",10,240);
+    textAlign(RIGHT);
+    text("16:9 photos resizer:",width-10,240);
+    textAlign(LEFT);
     text("Graduated from Politecnico di Milano",10,height-108);
-    text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
+    textAlign(RIGHT);
+    text("To contact me: cordelli.federico@gmail.com",width-10,height-108);
     pop();
 
-     //Title Positive
-     push();
-     textSize(48);
-     noFill();
-     stroke(value1, value1, value1);
-     strokeWeight(0.7);
-     textLeading(60);
-     text("\nNOT A SLIDESHOW",70,60);
-     fill(value1, value1, value1);
-     text("FEDERICO CORDELLI",70,73);
-     strokeWeight(1);
-     line(0,130,windowWidth,130);
-     line(0,height-100,windowWidth,height-100);
-     pop();
+    //Title Positive
+    push();
+    textSize(85);
+    noFill();
+    stroke(value1, value1, value1);
+    strokeWeight(0.9);
+    textLeading(93);
+    text("\nNOT A SLIDESHOW",40,100);
+    fill(value1, value1, value1);
+    text("FEDERICO CORDELLI",40,113);
+    strokeWeight(1);
+    line(0,210,windowWidth,210);
+    line(0,height-100,windowWidth,height-100);
+    pop();
 
      //Upside Type Frame Positive
      push();
      fill(value1, value1, value1);
-     textSize(10);
+     textSize(15);
      text("Class 1998", 10, 15);
      textAlign(CENTER);
      text("Horror Vacui", width/2, 15);
@@ -524,12 +559,12 @@ myButton.onPress = function(){
      //Downside Type Frame
      push();
      fill(value1, value1, value1);
-     textSize(10);
+     textSize(15);
      text("16:9", 10, height-10);
      textAlign(CENTER);
-     text("2:3", width/2, height-10);
+     text("This one-page site is designed & developed by me", width/2, height-10);
      textAlign(RIGHT);
-     text("This one-page site is designed & developed by me", width-10, height-10);
+     text("2:3", width-10, height-10);
      pop();
   }
 }
@@ -549,41 +584,43 @@ washButton.onPress = function(){
   fill(value1, value1, value1);
   strokeWeight(0);
   textFont(myFont);
-  textSize(15);
-  text("More info on:",10,height-82);
-  // text("Photo n°: ",width-84,height-82);
+  textSize(20);
+  text("More info on:",40,height-74);
   pop();
 
-  //Internal Type Frame
+  //Internal Type Frame Negative
   push();
-  textSize(15);
-  textLeading(15);
   fill(value1, value1, value1);
-  text("Communication Design",10,150);
-  text("16:9 photos resizer:",width-150,150);
+  textSize(20);
+  textLeading(15);
+  text("Communication Design",10,240);
+  textAlign(RIGHT);
+  text("16:9 photos resizer:",width-10,240);
+  textAlign(LEFT);
   text("Graduated from Politecnico di Milano",10,height-108);
-  text("To contact me: cordelli.federico@gmail.com",width-330,height-108);
+  textAlign(RIGHT);
+  text("To contact me: cordelli.federico@gmail.com",width-10,height-108);
   pop();
 
-   //Title Negative
-   push();
-   textSize(48);
-   noFill();
-   stroke(value1, value1, value1);
-   strokeWeight(0.7);
-   textLeading(60);
-   text("\nNOT A SLIDESHOW",70,60);
-   fill(value1, value1, value1);
-   text("FEDERICO CORDELLI",70,73);
-   strokeWeight(1);
-   line(0,130,windowWidth,130);
-   line(0,height-100,windowWidth,height-100);
-   pop();
+  //Title Negative
+  push();
+  textSize(85);
+  noFill();
+  stroke(value1, value1, value1);
+  strokeWeight(0.9);
+  textLeading(93);
+  text("\nNOT A SLIDESHOW",40,100);
+  fill(value1, value1, value1);
+  text("FEDERICO CORDELLI",40,113);
+  strokeWeight(1);
+  line(0,210,windowWidth,210);
+  line(0,height-100,windowWidth,height-100);
+  pop();
 
    //Upside Type Frame Negative
    push();
    fill(value1, value1, value1);
-   textSize(10);
+   textSize(15);
    text("Class 1998", 10, 15);
    textAlign(CENTER);
    text("Horror Vacui", width/2, 15);
@@ -594,12 +631,12 @@ washButton.onPress = function(){
    //Downside Type Frame
    push();
    fill(value1, value1, value1);
-   textSize(10);
+   textSize(15);
    text("16:9", 10, height-10);
    textAlign(CENTER);
-   text("2:3", width/2, height-10);
+   text("This one-page site is designed & developed by me", width/2, height-10);
    textAlign(RIGHT);
-   text("This one-page site is designed & developed by me", width-10, height-10);
+   text("2:3", width-10, height-10);
    pop();
 }
 

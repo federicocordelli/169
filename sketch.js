@@ -41,7 +41,7 @@ function setup() {
 
   frameRate(15);
 
-  //Radio Trial
+  //Radio Button for Resizing Imges
 push();
   radio = createRadio();
   radio.option('min',0.5);
@@ -49,7 +49,7 @@ push();
   radio.option('max',2);
   radio.style('width', '1000px');
   radio.position(width-180, 135);
-  radio.addClass('container');
+  radio.addClass('container1');
   textAlign(CENTER);
   fill(255, 0, 0);
   pop();
@@ -152,9 +152,9 @@ fill(value1, value1, value1);
 textSize(10);
 text("16:9", 10, height-10);
 textAlign(CENTER);
-text("2:3", width/2, height-10);
+text("This one-page site is designed & developed by me", width/2, height-10);
 textAlign(RIGHT);
-text("This one-page site is designed & developed by me", width-10, height-10);
+text("2:3", width-10, height-10);
 pop();
 
 //Internal Type Frame
@@ -272,9 +272,9 @@ function darkmodety() {
      textSize(10);
      text("16:9", 10, height-10);
      textAlign(CENTER);
-     text("2:3", width/2, height-10);
+     text("This one-page site is designed & developed by me", width/2, height-10);
      textAlign(RIGHT);
-     text("This one-page site is designed & developed by me", width-10, height-10);
+     text("2:3", width-10, height-10);
      pop();
   } else {
     value2 = 255;
@@ -338,9 +338,9 @@ function darkmodety() {
      textSize(10);
      text("16:9", 10, height-10);
      textAlign(CENTER);
-     text("2:3", width/2, height-10);
+     text("This one-page site is designed & developed by me", width/2, height-10);
      textAlign(RIGHT);
-     text("This one-page site is designed & developed by me", width-10, height-10);
+     text("2:3", width-10, height-10);
      pop();
   }
 }
@@ -403,9 +403,9 @@ function touchEnded() {
     textSize(10);
     text("16:9", 10, height-10);
     textAlign(CENTER);
-    text("2:3", width/2, height-10);
+    text("This one-page site is designed & developed by me", width/2, height-10);
     textAlign(RIGHT);
-    text("This one-page site is designed & developed by me", width-10, height-10);
+    text("2:3", width-10, height-10);
     pop();
 
     //Images 2:3
@@ -425,14 +425,15 @@ function touchStarted() {
 function touchMoved() {
   //Slider Value
   // valslider = slider.value();
-  //Radio Value
-  let val1 = radio.value();
 
   //Images 16:9
   // imageMode(CENTER);
   //  image(imagesOk[j+1], mouseX, mouseY, valslider, (valslider/16)*9);
   //  return false;
 
+  //Radio Value
+  let val1 = radio.value();
+  
    imageMode(CENTER);
     image(imagesOk[j+1], mouseX, mouseY, 256*val1,144*val1);
     return false;
@@ -511,9 +512,9 @@ function windowResized() {
    textSize(10);
    text("16:9", 10, height-10);
    textAlign(CENTER);
-   text("2:3", width/2, height-10);
+   text("This one-page site is designed & developed by me", width/2, height-10);
    textAlign(RIGHT);
-   text("This one-page site is designed & developed by me", width-10, height-10);
+   text("2:3", width-10, height-10);
    pop();
 
 }
@@ -575,8 +576,8 @@ function washability() {
    textSize(10);
    text("16:9", 10, height-10);
    textAlign(CENTER);
-   text("2:3", width/2, height-10);
+   text("This one-page site is designed & developed by me", width/2, height-10);
    textAlign(RIGHT);
-   text("This one-page site is designed & developed by me", width-10, height-10);
+   text("2:3", width-10, height-10);
    pop();
 }

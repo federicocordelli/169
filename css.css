@@ -4,38 +4,38 @@ css document
 */
 
 .slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;
   appearance: none;
-  width: 100%; /* Full-width */
-  height: 2px; /* Specified height */
+  width: 100%;
+  height: 2px;
   border-radius: 5px;
-  background: #ff0000; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  background: #ff0000;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
   transition: opacity .2s;
 }
 
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none;
   appearance: none;
-  width: 13px; /* Set a specific slider handle width */
-  height: 13px; /* Slider handle height */
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
-  background: #ff0000; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  background: #ff0000;
+  cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 13px; /* Set a specific slider handle width */
-  height: 13px; /* Slider handle height */
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
-  background: #ff0000; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  background: #ff0000;
+  cursor: pointer;
 }
 
 .button {
-  background-color: #FF0000; /* Green */
+  background-color: #FF0000;
   border: 1px solid #FFFFFF;
   color: white;
   padding: 10px 15px;
@@ -44,10 +44,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button:hover {
-  background-color: #ffffff; /* Green */
+  background-color: #ffffff;
   border: 1px solid #FF0000;
   color: red;
   padding: 10px 15px;
@@ -56,10 +57,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button:active {
-  background-color: #ff0000; /* Green */
+  background-color: #ff0000;
   border: 1px solid #ffffff;
   color: white;
   padding: 5px 10px;
@@ -68,10 +70,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button1 {
-  background-color: #ffffff; /* Green */
+  background-color: #ffffff;
   border: 1px solid #000000;
   color: black;
   padding: 10px 15px;
@@ -80,10 +83,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button1:hover {
-  background-color: #000000; /* Green */
+  background-color: #000000;
   border: 1px solid #ffffff;
   color: white;
   padding: 10px 15px;
@@ -92,10 +96,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button1:active {
-  background-color: #ffffff; /* Green */
+  background-color: #ffffff;
   border: 1px solid #000000;
   color: black;
   padding: 5px 10px;
@@ -104,10 +109,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button2 {
-  background-color: #000000; /* Green */
+  background-color: #000000;
   border: 1px solid #ff0000;
   color: red;
   padding: 10px 15px;
@@ -116,10 +122,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button2:hover {
-  background-color: #ff0000; /* Green */
+  background-color: #ff0000;
   border: 1px solid #000000;
   color: black;
   padding: 10px 15px;
@@ -128,10 +135,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button2:active {
-  background-color: #000000; /* Green */
+  background-color: #000000;
   border: 1px solid #ff0000;
   color: red;
   padding: 5px 10px;
@@ -140,10 +148,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button3 {
-  background-color: #FFFFFF; /* Green */
+  background-color: #FFFFFF;
   border: 1px solid #FF0000;
   color: red;
   padding: 10px 15px;
@@ -152,10 +161,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button3:hover {
-  background-color: #ff0000; /* Green */
+  background-color: #ff0000;
   border: 1px solid #FFFFFF;
   color: white;
   padding: 10px 15px;
@@ -164,10 +174,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button3:active {
-  background-color: #FFFFFF; /* Green */
+  background-color: #FFFFFF;
   border: 1px solid #FF0000;
   color: red;
   padding: 5px 10px;
@@ -176,10 +187,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button4 {
-  background-color: #000000; /* Green */
+  background-color: #000000;
   border: 1px solid #FFFFFF;
   color: white;
   padding: 3.7px 10px;
@@ -188,10 +200,11 @@ css document
   display: inline-block;
   font-size: 20px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button4:hover {
-  background-color: #ffffff; /* Green */
+  background-color: #ffffff;
   border: 1px solid #000000;
   color: black;
   padding: 3.7px 10px;
@@ -200,10 +213,11 @@ css document
   display: inline-block;
   font-size: 20px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button4:active {
-  background-color: #000000; /* Green */
+  background-color: #000000;
   border: 1px solid #ffffff;
   color: white;
   padding: 3.7px 10px;
@@ -212,10 +226,11 @@ css document
   display: inline-block;
   font-size: 20px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button5 {
-  background-color: #ffffff; /* Green */
+  background-color: #ffffff;
   border: 1px solid #000000;
   color: black;
   padding: 3.7px 10px;
@@ -224,10 +239,11 @@ css document
   display: inline-block;
   font-size: 20px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button5:hover {
-  background-color: #000000; /* Green */
+  background-color: #000000;
   border: 1px solid #ffffff;
   color: white;
   padding: 3.7px 10px;
@@ -236,10 +252,11 @@ css document
   display: inline-block;
   font-size: 20px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button5:active {
-  background-color: #ffffff; /* Green */
+  background-color: #ffffff;
   border: 1px solid #000000;
   color: black;
   padding: 3.7px 10px;
@@ -248,10 +265,11 @@ css document
   display: inline-block;
   font-size: 20px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button6 {
-  background-color: #000000; /* Green */
+  background-color: #000000;
   border: 1px solid #ffffff;
   color: white;
   padding: 10px 15px;
@@ -260,10 +278,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button6:hover {
-  background-color: #ffffff; /* Green */
+  background-color: #ffffff;
   border: 1px solid #000000;
   color: black;
   padding: 10px 15px;
@@ -272,10 +291,11 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 .button6:active {
-  background-color: #000000; /* Green */
+  background-color: #000000;
   border: 1px solid #ffffff;
   color: white;
   padding: 5px 10px;
@@ -284,33 +304,38 @@ css document
   display: inline-block;
   font-size: 15px;
   border-radius: 12px;
+  cursor: cell;
 }
 
 a:link {
   font-family:SuisseIntl-Medium;
   font-size: 15px;
   color: red;
+  cursor: cell;
 }
 
 a:visited {
   font-family:SuisseIntl-Medium;
   font-size: 15px;
   color: red;
+  cursor: cell;
 }
 
 a:hover {
   font-family:SuisseIntl-Medium;
   font-size: 16px;
   color: grey;
+  cursor: cell;
 }
 
 a:active {
   font-family:SuisseIntl-Medium;
   font-size: 15px;
   color: pink;
+  cursor: cell;
 }
 
-.container {
+.container1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -319,20 +344,5 @@ a:active {
   font-family:SuisseIntl-Medium;
   font-size: 15px;
   color: red;
-  cursor: pointer;
+  cursor: cell;
 }
-
-/*
-.container:after {
- 	top: 9px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: white;
-}
-
-container input:checked {
-  background-color: #FF0000;
-}
-*/

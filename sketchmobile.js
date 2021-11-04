@@ -7,9 +7,10 @@ var imagesVert = [];
 
 //Slider
 let slider;
+/*
 //Radio
 let radio;
-
+*/
 //Font
 let myFont;
 
@@ -126,6 +127,7 @@ function setup() {
 
   frameRate(15);
 
+/*
   //Radio Button for Resizing Imges
 push();
   radio = createRadio();
@@ -138,7 +140,7 @@ push();
   textAlign(CENTER);
   fill(255, 0, 0);
   pop();
-
+*/
   //Instructions Of Use For The User
   fill('red');
   textFont(myFont);
@@ -216,9 +218,9 @@ push();
 fill(value1, value1, value1);
 textSize(20);
 textLeading(15);
-text("Communication Design",10,240);
+text("Communication",10,240);
 textAlign(RIGHT);
-text("16:9 photos resizer:",width-10,240);
+text("Design",width-10,240);
 textAlign(LEFT);
 text("Graduated from Politecnico di Milano",10,height-108);
 textAlign(RIGHT);
@@ -348,7 +350,6 @@ function touchMoved() {
   imageMode(CENTER);
    image(imagesOk[j+1], mouseX, mouseY, valslider, (valslider/16)*9);
    return false;
-   */
 
      //Radio Value
      let val1 = radio.value();
@@ -356,6 +357,12 @@ function touchMoved() {
       imageMode(CENTER);
        image(imagesOk[j+1], mouseX, mouseY, 256*val1,144*val1);
        return false;
+       */
+
+       //Images 16:9
+       imageMode(CENTER);
+        image(imagesOk[j+1], mouseX, mouseY, 256*2, 144*2);
+        return false;
 }
 
 function windowResized() {
@@ -364,7 +371,7 @@ function windowResized() {
   resizeCanvas(windowWidth,windowHeight);
   background(value2, value2, value2);
   link.position(170, height-96);
-  radio.position(width-100, 300);
+  // radio.position(width-100, 300);
 
   frameRate(15);
 
@@ -382,9 +389,9 @@ function windowResized() {
   fill(value1, value1, value1);
   textSize(20);
   textLeading(15);
-  text("Communication Design",10,240);
+  text("Communication",10,240);
   textAlign(RIGHT);
-  text("16:9 photos resizer:",width-10,240);
+  text("Design",width-10,240);
   textAlign(LEFT);
   text("Graduated from Politecnico di Milano",10,height-108);
   textAlign(RIGHT);
@@ -457,9 +464,9 @@ myButton.onPress = function(){
     fill(value1, value1, value1);
     textSize(20);
     textLeading(15);
-    text("Communication Design",10,240);
+    text("Communication",10,240);
     textAlign(RIGHT);
-    text("16:9 photos resizer:",width-10,240);
+    text("Design",width-10,240);
     textAlign(LEFT);
     text("Graduated from Politecnico di Milano",10,height-108);
     textAlign(RIGHT);
@@ -521,9 +528,9 @@ myButton.onPress = function(){
     fill(value1, value1, value1);
     textSize(20);
     textLeading(15);
-    text("Communication Design",10,240);
+    text("Communication",10,240);
     textAlign(RIGHT);
-    text("16:9 photos resizer:",width-10,240);
+    text("Design",width-10,240);
     textAlign(LEFT);
     text("Graduated from Politecnico di Milano",10,height-108);
     textAlign(RIGHT);
@@ -593,9 +600,9 @@ washButton.onPress = function(){
   fill(value1, value1, value1);
   textSize(20);
   textLeading(15);
-  text("Communication Design",10,240);
+  text("Communication",10,240);
   textAlign(RIGHT);
-  text("16:9 photos resizer:",width-10,240);
+  text("Design",width-10,240);
   textAlign(LEFT);
   text("Graduated from Politecnico di Milano",10,height-108);
   textAlign(RIGHT);

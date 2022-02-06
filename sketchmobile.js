@@ -4,6 +4,7 @@
 var imagesOk = [];
 var j = 0;
 var imagesVert = [];
+var ill =[];
 
 //Slider
 let slider;
@@ -116,6 +117,11 @@ function preload(){
     imagesVert[k] = loadImage("addons/vertical/f"+k+".jpg");
   }
 
+  //Loading Illustrations
+for(var f=1; f<7; f++){
+  ill[f] = loadImage("addons/illustrations/"+f+".png");
+}
+
   //Loading Font
   myFont = loadFont('addons/SuisseIntl-Medium.otf');
 }
@@ -126,6 +132,20 @@ function setup() {
   background(value2, value2, value2);
 
   frameRate(15);
+
+  //Randomic Illustrations
+  let illustrationsHome = [1,2,3,4,5,6];
+  let randomic = random(illustrationsHome);
+
+  //Landing Screen
+  image(ill[randomic], 150, 220, (248.1)*4, (175.4)*4);
+
+  //Instructions Of Use For The User
+  fill('black');
+  textFont(myFont);
+  textSize(25);
+  textLeading(27);
+  text("My name is Federico Cordelli.\nI'm a Communication Designer,\nand this is not a photo slideshow.\nOr a design portfolio.\nBy the way you can see here\nmy project approach\nand my personal aesthetics.\n\nThis site is very simple to use:\n you just have to click\nand interact with my photos.\n\nThis site is not usefull to show\nwhat I can do, but what I love to do.",windowWidth/2 - 193,windowHeight/2 + 20);
 
 /*
   //Radio Button for Resizing Imges
@@ -141,16 +161,7 @@ push();
   fill(255, 0, 0);
   pop();
 */
-  //Instructions Of Use For The User
-  fill('red');
-  textFont(myFont);
-  textSize(22);
-  textLeading(25);
-  text("\n \n \n.20 photos in 16:9 [resizables] \n.20 photos in 2:3 \n.an interactive way to visualize them \n.my contacts \n \n.if you screen and use the pick \nplease tag me (@fristy_ on instagram) \n \n*JUST CLICK* ",windowWidth/2 - 193,windowHeight/2 - 100);
-  textSize(26);
-  text("'INSTRUCTIONS FOR USE'",windowWidth/2 - 193,windowHeight/2 - 100);
-  textSize(15);
-  text("*Things you can find here & rules:*",windowWidth/2 - 193,windowHeight/2 - 80);
+
 
 /*
     //Slider Images Resizer
@@ -338,6 +349,12 @@ function touchEnded() {
      image(imagesVert[j], windowWidth/2, windowHeight/2, 400, 600);
      return false;
 
+}
+
+//Fullscreen Function
+function touchStarted() {
+  let fs = fullscreen();
+ fullscreen(!fs--);
 }
 
 //Drag Function

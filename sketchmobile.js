@@ -349,13 +349,14 @@ function touchEnded() {
      image(imagesVert[j], windowWidth/2, windowHeight/2, 400, 600);
      return false;
 
-}
+/*}
 
 //Fullscreen Function
 function touchStarted() {
   let fs = fullscreen();
  fullscreen(!fs--);
 }
+*/
 
 //Drag Function
 function touchMoved() {

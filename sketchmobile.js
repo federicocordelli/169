@@ -134,7 +134,7 @@ function setup() {
   frameRate(15);
 
   //Randomic Illustrations
-  let illustrationsHome = [1,2,3,4,5,6];
+  let illustrationsHome = [1,2,3,4,5,6,7];
   let randomic = random(illustrationsHome);
 
   //Landing Screen

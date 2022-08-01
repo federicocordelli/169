@@ -118,7 +118,7 @@ function preload(){
   }
 
   //Loading Illustrations
-for(var f=1; f<7; f++){
+for(var f=1; f<8; f++){
   ill[f] = loadImage("addons/illustrations/"+f+".png");
 }
 

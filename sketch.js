@@ -60,7 +60,7 @@ function setup() {
   textFont(myFont);
   textSize(22);
   textLeading(25);
-  text("My name is Federico Cordelli.\nI'm a Communication Designer,\nand this is not a photo slideshow.\nOr a design portfolio.\nBy the way you can see here\nmy project approach\nand my personal aesthetics.\n\nThis site is very simple to use:\n you just have to click\nand interact with my photos.\n\nThis site is not useful to show\nwhat I can do, but what I love to do.",(windowWidth/2)+50,320);
+  text("My name is Federico Cordelli.\nI'm a Communication Designer,\nand this is not a photo slideshow.\nOr a design portfolio.\nBy the way you can see here\nmy project approach\nand my personal aesthetics.\n\nThis site is very simple to use:\n you just have to click\nand interact with my photos.\n\nThis site is not intended to show\nwhat I can do, but what I love to do.",(windowWidth/2)+50,320);
 
   //Radio Button for Resizing Imges
 push();
